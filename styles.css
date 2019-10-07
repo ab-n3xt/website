@@ -1,0 +1,39 @@
+body {
+	color: #000000;			/* BLACK */
+	background: #FFFFFF;	/* WHITE */
+	font-size: 18px;
+}
+
+h1 {
+	font-size: 2em;			/* 2x the base font size (18px) */
+	background-color: #F0F0F0;
+	padding: 10px 10px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.6em;
+	background-color: #F0F0F0
+}
+
+p {
+	background-color: #F0F0F0
+}
+
+nav {
+	background-color: #F0F0F0;
+	width: 100%;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li a {
+	float: left;
+	background-color: #F0F0F0;
+	width: 33%;
+	text-align: center;
+}
