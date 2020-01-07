@@ -1,28 +1,65 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
-	color: #000000;			/* BLACK */
-	background: #FFFFFF;	/* WHITE */
+	background: #000000;				/* BLACK */
+	color: #FFFFFF;		/* WHITE */
 	font-size: 18px;
 }
 
+article, h1, nav, ul, li, a{
+	background-color: rgba(255, 255, 255, 0.01);
+}
+
 h1 {
-	font-size: 2em;			/* 2x the base font size (18px) */
-	background-color: #F0F0F0;
-	padding: 10px 10px;
+	font-size: 2em;							/* 2x the base font size (18px) */
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding-top: 30px;
+	padding-bottom: 10px;
 	text-align: center;
 }
 
-h2 {
-	font-size: 1.6em;
-	background-color: #F0F0F0
+article {
+	margin-top: 15px;
 }
 
-p {
-	background-color: #F0F0F0
+article > header > h2 {
+	font-size: 1.3em;							/* 2x the base font size (18px) */
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding: 10px;
+	/*text-decoration: underline;*/
+	display: inline;
 }
 
 nav {
-	background-color: #F0F0F0;
 	width: 100%;
+}
+
+article > p {
+	padding: 10px;
+	margin-bottom: 10px;
+	text-align: justify;
+	font-family: "Orator W01 Medium", monospace;
+	font-size: initial;
+}
+
+article > header > time {
+	color: rgb(124, 124, 124);
+	text-align: justify;
+	font-family: "Orator W01 Medium", monospace;
+	font-size: initial;
+}
+
+p {
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: justify;
+	font-family: "Orator W01 Medium", monospace;
+	font-size: initial;
 }
 
 ul {
@@ -32,8 +69,16 @@ ul {
 }
 
 li a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 	float: left;
-	background-color: #F0F0F0;
-	width: 33%;
+	width: 25%;
 	text-align: center;
+}
+
+a:link, a:hover {
+	color: white;
+}
+
+a:visited, a:active {
+	color: gray;
 }
