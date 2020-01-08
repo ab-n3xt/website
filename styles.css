@@ -8,9 +8,11 @@ body {
 	background: #000000;	/* BLACK */
 	color: #FFFFFF;			/* WHITE */
 	font-size: 18px;
+	width: 80%;
+	margin: 0 auto;
 }
 
-article, h1, nav, ul, li, a{
+article, h1, nav, a{
 	background-color: rgba(255, 255, 255, 0.01);
 }
 
@@ -51,6 +53,12 @@ article > header > time {
 	text-align: justify;
 	font-family: "Orator W01 Medium", monospace;
 	font-size: initial;
+}
+
+article > ul {
+	font-family: "Orator W01 Medium", monospace;
+	font-size: initial;
+	padding-left: 20px;
 }
 
 p {
