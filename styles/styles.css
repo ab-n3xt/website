@@ -88,7 +88,7 @@ nav {
 	border-color: #598084;
 	display: grid;
 	grid-area: 2 / 1 / 4 / 1;
-	grid-template-rows: repeat(4, 6%);
+	grid-template-rows: repeat(4, 40px);
 }
 
 nav > a {
