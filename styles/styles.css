@@ -12,7 +12,7 @@ body {
 	margin: 0 auto;
 	display: grid;
 	grid-row-gap: 20px;
-	grid-template-columns: 20% 2fr 1fr;
+	grid-template-columns: 150px 2fr 1fr;
 	grid-template-rows: 100px 1fr 1fr;
 	height: 99vh;
 }
