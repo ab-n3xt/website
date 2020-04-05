@@ -5,37 +5,28 @@
 }
 
 body {
-	background: #1e2c3e;;	/* BLACK */
-	color: #FFFFFF;			/* WHITE */
 	font-size: 18px;
-	width: 80vw;
 	margin: 0 auto;
 	display: grid;
 	grid-row-gap: 20px;
-	grid-template-columns: 150px 2fr 1fr;
+	grid-template-columns: 200px 2fr 1fr;
 	grid-template-rows: 100px 1fr 1fr;
-	height: 99vh;
+	transition: margin-left .5s;
+	min-height: 100vh;
 }
 
-/* Title of Page */
 h1 {
+	padding: 10px;
 	margin-top: 50px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #598084;
-	color: #e4e4d8;
 	font-size: 2em;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	text-align: center;
-	grid-area: 1 / 1 / 1 / 4;
+	font-family: "Source Sans Pro", sans-serif;
+	grid-area: 1 / 2 / 1 / 4;
 }
 
 article > header > h2 {
-	color: #e4e4d8;
 	font-size: 1.3em;							
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: "Source Sans Pro", sans-serif;
 	padding: 10px;
-	/*text-decoration: underline;*/
 	display: inline;
 }
 
@@ -43,23 +34,20 @@ article > p {
 	padding: 10px;
 	margin-bottom: 10px;
 	text-align: justify;
-	font-family: "Orator W01 Medium", monospace;
+	font-family: "Source Sans Pro", sans-serif;
 	font-size: initial;
-	color: #d0c4a9
 }
 
 article > header > time {
-	color: rgb(124, 124, 124);
 	text-align: justify;
-	font-family: "Orator W01 Medium", monospace;
+	font-family: "Source Sans Pro", sans-serif;
 	font-size: initial;
 }
 
 article > ul {
-	font-family: "Orator W01 Medium", monospace;
+	font-family: "Source Sans Pro", sans-serif;
 	font-size: initial;
 	padding-left: 20px;
-	color: #d0c4a9
 }
 
 article {
@@ -71,7 +59,7 @@ p {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	text-align: justify;
-	font-family: "Orator W01 Medium", monospace;
+	font-family: "Source Sans Pro", sans-serif;
 	font-size: initial;
 }
 
@@ -82,24 +70,44 @@ ul {
 }
 
 nav {
+	width: 200px;
+	height: 100%;
 	align-items: center;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #598084;
-	display: grid;
-	grid-area: 2 / 1 / 4 / 1;
-	grid-template-rows: repeat(4, 40px);
+	background-color: #141416;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-nav > a {
+picture {
+	margin-top: 40px;
+	justify-self: center;
+	z-index: 1;
+}
+
+picture img {
+	border-radius: 50%;
+}
+
+picture figcaption {
 	text-align: center;
+	font-size: 18px;
+	font-family: "Source Sans Pro", sans-serif;
+	color: #f1f1f1;
+}
+  
+nav a {
+	margin-top: 10px;
+	margin-bottom: 10px;
 	text-decoration: none;
+	text-align: center;
+	font-size: 20px;
+	font-family: "Source Sans Pro", sans-serif;
+	color: #818181;
+	display: block;
 }
-
-a:link, a:hover {
-	color: #e4e4d8;
-}
-
-a:visited, a:active {
-	color: #e4e4d8;
+  
+nav a:hover {
+	color: #f1f1f1;
 }
