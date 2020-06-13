@@ -26,6 +26,11 @@ article a:visited {
 	color: white;
 }
 
+article iframe {
+	height: 400px;
+	width: 400px
+}
+
 body {
 	background-color: rgba(0, 0, 0, 0.96);
 	color: white;
@@ -114,15 +119,23 @@ main {
 	grid-area: main;
 }
 
+main a {
+	text-align: left;
+	text-decoration: none;
+	font-size: 1em;
+	font-family: "Source Sans Pro", sans-serif;
+	color: white;
+}
+
+li {
+	font-size: 0.8em;
+}
+
 p {
 	padding: 5px;
 	margin-top: 10px;
 	text-align: justify;
 	font-family: "Source Sans Pro", sans-serif;
-	font-size: 0.8em;
-}
-
-li {
 	font-size: 0.8em;
 }
 
@@ -132,6 +145,14 @@ time {
 }
 
 @media screen and (min-width: 700px) {
+	article {
+		width: 700px;
+	}
+
+	article iframe {
+		width: 700px;
+	}
+	
 	body {
 		font-size: 30px;
 	}
@@ -139,9 +160,5 @@ time {
 	header nav a:nth-child(2) {
 		margin-left: 48px;
 		margin-right: 48px;
-	}
-
-	article {
-		width: 700px;
 	}
 }
