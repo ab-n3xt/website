@@ -1,5 +1,5 @@
 function min(tE, s) {
-    var e = document.getElementById(s);
+    const e = document.getElementById(s);
     if (e.style.display == "none") {
         tE.innerHTML="[-]";
         e.style.display="block";
