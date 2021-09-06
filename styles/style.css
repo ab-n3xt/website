@@ -87,9 +87,11 @@ main > article > h2 {
 	font-size: 1.2em;
 }
 
-main > article > p {
+main > article > pre {
 	color: black;
 	font-size: 0.7em;
+	margin-top: 10px;
+	white-space: pre-line;
 }
 
 main > article > ul > li {
