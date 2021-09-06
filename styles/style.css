@@ -1,0 +1,148 @@
+* {
+	box-sizing: border-box;
+	font-size: 24px;
+	font-family: "Source Sans Pro", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+article:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+article > a {
+	text-decoration: none;
+}
+
+article > a:hover {
+	color: black;
+}
+
+article > a:visited {
+	color: black;
+}
+
+body {
+	align-items: center;
+	background: url("../images/trees.jpg");
+	color: black;
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+	width: 100vw;
+}
+
+header {
+	align-items: center;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	height: 100%;	
+}
+
+header > h1 {
+	font-size: 1.2em;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;		
+}
+
+header > img {
+	border-radius: 50%;
+	margin-top: 20px;
+	width: 200px;
+}
+
+header > nav {
+	display: flex;
+	flex-direction: column;
+}
+
+header > nav > a {
+	color: black;
+	display: block;
+	font-size: 20px;
+	margin-top: 20px;
+	text-align: center;
+	text-decoration: none;
+}
+
+header > nav > a:last-child {
+	margin-bottom: 40px;
+}
+
+main {
+	width: 700px;
+}
+
+main > h1 {
+	border-style: solid;
+	color: white;
+	display: inline-block;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+main > ul > li {
+	background: white;
+	color: white;
+	font-size: 1em;
+	list-style: none;
+	margin-bottom: 10px;
+	padding: 5px;
+	text-align: left;
+}
+
+main > ul > li > a {
+	color: blue;
+	display: block;
+	font-size: 0.8em;
+	text-align: right;
+}
+
+main > ul > li > h2 {
+	color: black;
+	display: inline-block;
+	font-size: 1.2em;
+}
+
+main p {
+	color: black;
+	font-size: 0.7em;
+	margin-top: 10px;
+	padding: 5px;
+	text-align: justify;
+}
+
+time {
+	color: black;
+	font-size: 0.6em;	
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		flex-direction: column;
+	}
+
+	header {
+		height: initial;
+		width: 100%;
+	}
+
+	main {
+		padding-left: 10px;
+		padding-right: 10px;
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 601px) {
+	main {
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+}
