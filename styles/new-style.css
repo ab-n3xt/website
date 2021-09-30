@@ -1,0 +1,170 @@
+* {
+	box-sizing: border-box;
+	font-size: 22px;
+  font-family: 'JetBrainsMono', monospace;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+footer {
+	background: gold;
+	text-align: center;
+	margin-top: auto;
+}
+
+footer > p {
+	font-size: 0.8em;
+}
+
+header {
+	border-radius: 20px;
+	display: flex;
+	margin: 5px;
+	padding: 5px;
+}
+
+html {
+	height: 100%;
+}
+
+main {
+	margin-top: 50px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+main > article > p {
+	color: black;
+	font-size: 0.8em;
+	margin-top: 10px;
+}
+
+main > article > ul > li {
+	font-size: 0.8em;
+	list-style: none;
+}
+
+main > h1 {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+}
+
+main > ul > li {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	list-style: none;
+	padding: 5px;
+}
+
+main > ul > li > a {
+	display: block;
+	margin-top: 20px;
+	text-align: right;
+}
+
+main > ul > li > p {
+	font-size: 0.8em;
+}
+
+main > ul > li {
+	margin-bottom: 40px;
+}
+
+strong {
+	display: block;
+	margin-top: 20px	;
+}
+
+time {
+	font-size: 0.6em;	
+}
+
+#article-title {
+	border-bottom: 2px solid gold;
+	margin-bottom: 20px;
+}
+
+#article-title > h2 {
+	display: inline;
+	font-size: 1.3em;
+}
+
+#embedded-yt {
+	height:400px;
+	margin-bottom: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	width:500px;
+}
+
+#nav-section {
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	flex-wrap: wrap;
+}
+
+#nav-section > h1 {
+	display: block;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+#nav-section > nav {
+	text-align: center;
+}
+
+#nav-section > nav > a:first-child {
+	border-right: 1px solid black;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#nav-section > nav > a:last-child {
+	border-left: 1px solid black;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.active-page {
+	background: lightgray;
+}
+
+@media screen and (min-width: 625px) {
+	#nav-section {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	#nav-section > h1 {
+		align-self: center;
+		flex-direction: row;
+		flex-basis: 300px;
+	}
+
+	#nav-section > nav {
+		align-self: center;
+		display: block;
+		margin-right: 10px;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	main {
+		margin-left: auto;
+		margin-right: auto;
+		width: 800px;
+	}
+}
+
+@font-face {
+  font-family: JetBrainsMono;
+  src: url(JetBrainsMono.ttf);
+}
