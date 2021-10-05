@@ -133,8 +133,19 @@ time {
 	padding-right: 10px;
 }
 
+#project-panel > img {
+	height: 100px;
+	object-fit: cover;
+	object-position: 0% 100%;
+	width: 100%;
+}
+
+#project-panel > p:last-child {
+	text-align: right;
+}
+
 .active-page {
-	background: lightgray;
+	background: gold;
 }
 
 @media screen and (min-width: 625px) {
