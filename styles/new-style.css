@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
 	font-size: 22px;
-  font-family: 'JetBrainsMono', monospace;
+  font-family: sans-serif;
 	margin: 0;
 	padding: 0;
 }
@@ -11,7 +11,7 @@ body {
 	flex-direction: column;
 	min-height: 100%;
 }
-
+/* Out of commission
 footer {
 	background: gold;
 	text-align: center;
@@ -21,7 +21,7 @@ footer {
 footer > p {
 	font-size: 0.8em;
 }
-
+*/
 header {
 	border-radius: 20px;
 	display: flex;
@@ -35,14 +35,18 @@ html {
 
 main {
 	margin-top: 50px;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 main > article > p {
 	color: black;
-	font-size: 0.8em;
-	margin-top: 10px;
+	font-size: 0.75em;
+	line-height: 2.25em;
+}
+
+main > article > p:not(:last-child) {
+	margin-bottom: 25px;
 }
 
 main > article > ul > li {
@@ -55,24 +59,23 @@ main > h1 {
 	margin-bottom: 20px;
 }
 
-main > ul > li {
+main > ul > a:link {
+	text-decoration: none;
+}
+
+main > ul > a:visited {
+	color: blue;
+}
+
+main > ul > a:hover {
+	color: blue;
+}
+
+main > ul > a > li {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	list-style: none;
-	padding: 5px;
-}
-
-main > ul > li > a {
-	display: block;
-	margin-top: 20px;
-	text-align: right;
-}
-
-main > ul > li > p {
-	font-size: 0.8em;
-}
-
-main > ul > li {
 	margin-bottom: 40px;
+	padding: 5px;
 }
 
 strong {
@@ -86,7 +89,7 @@ time {
 
 #article-title {
 	border-bottom: 2px solid gold;
-	margin-bottom: 20px;
+	margin-bottom: 24px;
 }
 
 #article-title > h2 {
@@ -94,13 +97,14 @@ time {
 	font-size: 1.3em;
 }
 
-#embedded-yt {
-	height:400px;
-	margin-bottom: 40px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
-	width:500px;
+#blog-tile {
+	border-bottom: 2px solid gold;
+	margin-bottom: 4px;
+}
+
+#blog-tile > h2 {
+	display: inline;
+	font-size: 1.3em;
 }
 
 #nav-section {
@@ -121,6 +125,18 @@ time {
 	text-align: center;
 }
 
+#nav-section > nav > a:link {
+	color: blue;
+}
+
+#nav-section > nav > a:visited {
+	color: blue;
+}
+
+#nav-section > nav > a:hover {
+	color: blue;
+}
+
 #nav-section > nav > a:first-child {
 	border-right: 1px solid black;
 	padding-left: 10px;
@@ -138,10 +154,6 @@ time {
 	object-fit: cover;
 	object-position: 0% 100%;
 	width: 100%;
-}
-
-#project-panel > p:last-child {
-	text-align: right;
 }
 
 .active-page {
@@ -173,9 +185,4 @@ time {
 		margin-right: auto;
 		width: 800px;
 	}
-}
-
-@font-face {
-  font-family: JetBrainsMono;
-  src: url(JetBrainsMono.ttf);
 }
