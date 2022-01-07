@@ -11,17 +11,6 @@ body {
 	flex-direction: column;
 	min-height: 100%;
 }
-/* Out of commission
-footer {
-	background: gold;
-	text-align: center;
-	margin-top: auto;
-}
-
-footer > p {
-	font-size: 0.8em;
-}
-*/
 header {
 	border-radius: 20px;
 	display: flex;
