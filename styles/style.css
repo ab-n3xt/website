@@ -1,0 +1,128 @@
+@font-face {
+    font-family: PublicSans;
+    src: url(../fonts/public-sans-variable.ttf);
+}
+
+* {
+	box-sizing: border-box;
+    font-family: PublicSans, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+article {
+    line-height: 1.5rem;
+}
+
+article > h1, h2 {
+    padding-left: 10px;
+}
+
+article p {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+article figure {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+article figure figcaption {
+    padding: 0.4rem;
+    line-height: 1.8rem;
+}
+
+article figure > img {
+    height: 100px;
+    object-fit: cover;
+    object-position: 50% 20%;
+}
+
+article a {
+    text-decoration: none;
+}
+
+article a:visited {
+    color: black;
+}
+
+article > h1 {
+    border-bottom: 2px solid white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 12px;
+}
+
+article > p:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+body {
+    background-color: rgb(61, 80, 99);
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px 15px 15px;
+    min-height: 100%;
+}
+
+.main-body {
+    justify-content: space-between;
+}
+
+html {
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: end;
+    box-shadow: 2px 2px 10px rgb(50, 50, 50);
+    margin: 0px -15px 0px -15px;
+    padding: 10px;
+}
+
+main {
+    animation: fadeIn 1s;
+    color: white;
+    margin-top: 30px;
+}
+
+/* https://css-irl.info/animating-underlines/ */
+nav > a {
+    text-underline-offset: 0.3em;
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
+
+nav > a:hover {
+    text-decoration-color: rgb(255, 255, 255, 1);
+}
+
+nav > a:not(:last-child) {
+    margin-right: 10px;
+}
+
+nav > a:visited {
+    color: white;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.active-page {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        margin: 30px auto 0px auto;
+        width: 800px;
+    }
+}
