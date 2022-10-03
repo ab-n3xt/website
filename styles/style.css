@@ -99,6 +99,10 @@ nav > a {
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
 }
 
+nav > a:link {
+    color: white;
+}
+
 nav > a:hover {
     text-decoration-color: rgb(255, 255, 255, 1);
 }
