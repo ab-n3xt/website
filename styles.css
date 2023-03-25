@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*,
+*::before,
+*::after {
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#summary {
+    background-color: #102C45;
+    color: rgba(255, 255, 255, 0.05);
+    grid-area: summary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+}
+
+.title {
+    color: white;
+}
+
+section {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+section > p:not(:first-child) {
+    margin-top: 20px;
+}
+
+section#links {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+section#links > a {
+    display: block;
+    border: 1px black solid;
+    border-radius: 20px;
+    padding: 10px;
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+
+section#links > a:not(:first-child) {
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    height: 10rem;
+}
+
+.card-title {
+    /* background-color: black; */
+    color: black;
+    padding: 4px;
+}
+
+.card-content {
+    color: rgba(0,0,0,0.95);
+    padding: 4px;
+}
+
+.card-status {
+    /* background-color: black; */
+    color: black;
+    margin-top: auto;
+}
+
+#projects {
+    background-color: #D7CEB2;
+    color: rgba(255, 0, 0, 0.2);
+    display: flex;
+    grid-area: projects;
+    flex-direction: column;
+    padding: 8px;
+}
+
+#blogs {
+    background-color: #DC602E;
+    color: #102c4541;
+    display: flex;
+    flex-direction: column;;
+    grid-area: blogs;
+    padding: 8px;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+/* .list > summary:not(:first-child) {
+    margin-left: 40px;
+} */
+
+main {
+    display: grid;
+    grid-template-areas: "summary projects" "summary blogs";
+    grid-template-columns: 300px auto;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
