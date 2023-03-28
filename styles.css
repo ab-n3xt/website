@@ -1,125 +1,283 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-
 *,
 *::before,
 *::after {
-    font-family: 'Raleway', sans-serif;
+    font-family: sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-#summary {
-    background-color: #102C45;
-    color: rgba(255, 255, 255, 0.05);
-    grid-area: summary;
+body {
+    background-color: white;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 8px;
+    margin: 0px auto;
+    overflow: hidden;
 }
 
-.title {
+header,
+footer {
+    background: black;
     color: white;
+    height: 2ch;
 }
 
-section {
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-section > p:not(:first-child) {
-    margin-top: 20px;
-}
-
-section#links {
+main {
+    color: white;
     display: flex;
-    width: 100%;
+    justify-content: space-between;
+    height: 92%;
+    padding: 0px 12px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+#summary {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding: 16px 8px;
+    margin: 0px 12px;
+    flex-shrink: 3;
+}
+
+#projects, #links, #blogs {
+    color: black;
+    border: 1px black solid;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: 8px 8px black;
+    overflow: auto;
+}
+
+#projects, #blogs {
+    width: 300px;
+}
+
+#projects>h1 {
+    color: black;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px;
+    align-items: center;
+}
+
+.project-card {
+    background-color: white;
+    border: 1px solid black;
+    width: 250px;
+    height: 250px;
+    box-shadow: 8px 8px black;
+    border-radius: 20px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card > a:last-child {
+    padding: 2px 0px;
+    text-align: center;
     margin-top: auto;
 }
 
-section#links > a {
-    display: block;
+.project-card>h4 {
+    color: white;
+    background-color: black;
+    padding-left: 8px;
+}
+
+.project-card>img {
+    height: 40%;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    background-color: black;
+}
+
+.project-card > p {
+    padding: 2px 8px;
+}
+
+a,
+a:visited {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.blog-card {
+    background-color: white;
+}
+
+#card {
     border: 1px black solid;
     border-radius: 20px;
-    padding: 10px;
-    color: black;
     background-color: white;
+    box-shadow: 8px 8px black;
+    color: black;
+    width: 500px;
+    height: 240px;
+    justify-content: space-between;
+}
+
+#card>h5 {
+    padding-top: 4px;
     text-align: center;
 }
 
-section#links > a:not(:first-child) {
+#card-content {
+    padding: 16px 32px;
+    display: flex;
+}
+
+#card-image {
+    margin-left: 40px;
+    text-align: center;
+}
+
+#card-image>img {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    background-color: black;
+}
+
+#card-text>h4 {
+    background-color: black;
+    color: white;
+    padding-left: 4px;
+    padding-top: 4px;
+    padding-bottom: 1px;
+}
+
+#card-text>p {
+    padding-left: 8px;
+    padding-bottom: 8px;
+}
+
+#links {
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
 }
 
-.card {
-    background-color: white;
-    border: solid 1px black;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    width: 14rem;
-    height: 10rem;
+header {
+    margin-bottom: auto;
 }
 
-.card-title {
-    /* background-color: black; */
-    color: black;
-    padding: 4px;
-}
-
-.card-content {
-    color: rgba(0,0,0,0.95);
-    padding: 4px;
-}
-
-.card-status {
-    /* background-color: black; */
-    color: black;
+footer {
     margin-top: auto;
 }
 
-#projects {
-    background-color: #D7CEB2;
-    color: rgba(255, 0, 0, 0.2);
-    display: flex;
-    grid-area: projects;
-    flex-direction: column;
-    padding: 8px;
+/* Scroll Animation */
+/* Taken from: https://stackoverflow.com/a/45847760/15637382 */
+.linear-scroll {
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
 }
 
-#blogs {
-    background-color: #DC602E;
-    color: #102c4541;
-    display: flex;
-    flex-direction: column;;
-    grid-area: blogs;
-    padding: 8px;
+.linear-scroll-left span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: linear-scroll-left 20s linear infinite;
+    animation-delay: -10s;
 }
 
-.list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 12px;
+.linear-scroll-right span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: linear-scroll-right 20s linear infinite;
+    animation-delay: -10s;
 }
 
-/* .list > summary:not(:first-child) {
-    margin-left: 40px;
-} */
-
-main {
-    display: grid;
-    grid-template-areas: "summary projects" "summary blogs";
-    grid-template-columns: 300px auto;
-    width: 100vw;
-    height: 100vh;
+.linear-scroll-left-2 span, .linear-scroll-right-2 span {
+    animation-delay: 0s;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+@keyframes linear-scroll-left {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
 }
 
+@keyframes linear-scroll-right {
+    0% {
+        transform: translate(-100%, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    #card {
+        width: auto;
+    }
+
+    #card {
+        font-size: calc(0.7vw + 0.7vh);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    body {
+        height: 100%;
+        overflow-y: visible;
+    }
+
+    footer {
+        margin-top: 12px;
+    }
+
+    #card {
+        font-size: calc(1.2vw + 1.2vh);
+        height: fit-content;
+    }
+
+    #summary {
+        order: 1;
+    }
+
+    #projects {
+        order: 2;
+    }
+
+    #blogs {
+        order: 3;
+    }
+    
+    #projects, #links, #blogs {
+        overflow: visible;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content
+    }
+
+    #card-image > img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #blogs {
+        margin: 16px 0px;
+    }
+}

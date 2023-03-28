@@ -6,82 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+    <script type="module" src="script.js"></script>
     <title>Aidan Buchanan</title>
 </head>
 <body>
 
 <header>
-    <nav>
-        <a href="#">Link1</a>
-        <a href="#">Link2</a>
-    </nav>
+    <p class="linear-scroll linear-scroll-right">
+        <span>THINK FOR YOURSELF --- THINK FOR YOURSELF --- THINK FOR YOURSELF --- THINK FOR YOURSELF --- THINK FOR YOURSELF --- THINK FOR YOURSELF --- THINK FOR YOURSELF ---</span>
+    </p>
+    <p class="linear-scroll linear-scroll-right linear-scroll-right-2">
+        <span>THINK FOR YOURSELF --- THINK FOR YOURSELF --- THINK FOR YOURSELF --- THINK FOR YOURSELF --- THINK FOR YOURSELF --- THINK FOR YOURSELF --- THINK FOR YOURSELF ---&nbsp</span>
+    </p>
 </header>
 
 <main>
-    <div class="pattern-grid-lg" id="summary">
-        <div class="title">
-            <h1>Aidan Buchanan</h1>
-            <h3>Full-Stack Web Developer</h3>
+    <section id="projects">
+        <h1>Projects</h1>
+        <div class="card-list">
+            <div class="project-card">
+                <img src="#">
+                <h4>Mod Hosting Web App</h4>
+                <p>Django app for hosting and sharing mods between users.</p>
+                <a href="#">GitHub</a>
+            </div>
+            <div class="project-card">
+                <img src="#">
+                <h4>Pacman</h4>
+                <p>Pacman made in Python (using Pygame).</p>
+                <a href="#">GitHub</a>
+            </div>
         </div>
-        <img src="#" style="height: 10rem; width: 10rem; border-radius: 90px; background-color: aqua; margin-top: 10px;">
-        <section style="color: white;">
-            <p>I am a full-stack web developer who loves to create desktop and web applications.</p>
-            <p>I am currently looking for work, so feel free to read my resume below or contact me directly at aidan.buchanan@gmail.com.</p>
-            <p>Current technologies I use: Django, Linode, NGINX, Bootstrap, HTML5, CSS3, JavaScript</p>
-        </section>
+    </section>
+    <section id="summary">
+        <div id="card">
+            <h5>Future Company Corp.</h5>
+            <div id="card-content">
+                <div id="card-text">
+                    <h4>Name:</h4>
+                    <p>Aidan Buchanan</p>
+                    <h4>Role:</h4>
+                    <p>Full Stack Web Developer</p>
+                    <h4>Description:</h4>
+                    <p>Web developer who has an insatiable love for building desktop and web applications.</p>
+                </div>
+                <div id="card-image">
+                    <img src="#">
+                    <p>Expires on:</p>
+                    <p>March 24, 2023</p>
+                </div>
+            </div>
+        </div>
         <section id="links">
-            <a href="#">Resume</a>
-            <a href="#">GitHub</a>
-            <a href="#">LinkedIn</a>
+            <h1>Links</h1>
+            <nav>
+                <a target="_blank" href="./resume.pdf">Resume</a>
+                <a target="_blank" href="https://www.linkedin.com/in/aidan-buchanan/">LinkedIn</a>
+                <a target="_blank" href="https://github.com/ab-n3xt">GitHub</a>
+            </nav>
         </section>
-    </div>
-    <div class="pattern-dots-lg" id="projects">
-        <h1 style="color: white">Projects</h1>
-        <div class="list">
-            <div class="card">
-                <div class="card-title">
-                    <h3>Mod-Hosting Website</h3>
-                </div>
-                <div class="card-content">
-                    <p>Mod hosting website for uploading and sharing mods for a game.</p>
-                </div>
-                <div class="card-status">
-                    <h4>In Production</h4>
-                </div>
-            </div>            
-            <div class="card">
-                <div class="card-title">
-                    <h3>Pacman in Python</h3>
-                </div>
-                <div class="card-content">
-                    <p>Using Python's Pygame to recreate Pacman.</p>
-                </div>
-                <div class="card-status">
-                    <h4>Completed</h4>
-                </div>
+    </section>
+    <section id="blogs">
+        <h1>Blogs</h1>
+        <div class="card-list">
+            <div class="blog-card">
+                <a href="#"><h4>How I Hosted My First Django App</h4><h5>March 24, 2023</h5></a>         
             </div>
         </div>
-    </div>
-    <div class="pattern-dots-lg" id="blogs">
-        <h1 style="color: white;">Blogs</h1>
-        <div class="list">
-            <div class="card">
-                <div class="card-title">
-                    <h3>Creating My First Web Application</h3>
-                </div>
-                <div class="card-content">
-                    <p>How I made my mod-hosting website from the ground-up with Django.</p>
-                </div>
-                <div class="card-status">
-                    <h4>March 24, 2023</h4>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
 </main>
 
 <footer>
-    Footer
+    <p class="linear-scroll linear-scroll-left">
+        <span>QUESTION AUTHORITY --- QUESTION AUTHORITY --- QUESTION AUTHORITY --- QUESTION AUTHORITY --- QUESTION AUTHORITY --- QUESTION AUTHORITY --- QUESTION AUTHORITY --- </span>
+    </p>
+    <p class="linear-scroll linear-scroll-left linear-scroll-left-2">
+        <span>QUESTION AUTHORITY --- QUESTION AUTHORITY --- QUESTION AUTHORITY --- QUESTION AUTHORITY --- QUESTION AUTHORITY --- QUESTION AUTHORITY --- QUESTION AUTHORITY ---&nbsp</span>
+    </p>
 </footer>
 
 </body>
