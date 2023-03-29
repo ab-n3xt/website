@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -172,6 +172,9 @@ nav {
     background-color: black;
     color: white;
     padding-left: 2px;
+}
+.summary-card-text>p {
+    padding-top: 2px;
 }
 
 #links {
