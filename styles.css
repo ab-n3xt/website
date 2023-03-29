@@ -7,28 +7,58 @@
     padding: 0;
 }
 
-body {
-    background-color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0px auto;
+a,
+a:visited {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+html {
     overflow: hidden;
 }
 
-header,
+body {
+    background-color: white;
+    display: grid;
+    overflow: hidden;
+    grid-template-rows: 2ch 1fr 2ch;
+    grid-template-areas: "header" "main" "footer";
+    height: 100vh;
+    font-size: 1.3vw;
+    max-width: 100%;
+}
+
+header {
+    grid-area: header;
+    overflow: hidden;
+}
+
 footer {
+    grid-area: footer;
+    overflow: hidden;
+}   
+
+header, footer {
     background: black;
     color: white;
     height: 2ch;
 }
 
 main {
+    grid-area: main;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    height: 92%;
-    padding: 0px 12px;
+    display: grid;
+    padding: 12px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: minmax(0, 1fr);
+    column-gap: 2vw;
+    grid-template-areas: "projects summary blogs";
+    min-height: 0;
+    min-width: 0;
 }
 
 nav {
@@ -37,12 +67,10 @@ nav {
 }
 
 #summary {
+    grid-area: summary;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 16px 8px;
-    margin: 0px 12px;
-    flex-shrink: 3;
 }
 
 #projects, #links, #blogs {
@@ -52,10 +80,7 @@ nav {
     padding: 8px;
     box-shadow: 8px 8px black;
     overflow: auto;
-}
-
-#projects, #blogs {
-    width: 300px;
+    min-width: 0;
 }
 
 #projects>h1 {
@@ -72,11 +97,11 @@ nav {
 .project-card {
     background-color: white;
     border: 1px solid black;
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: min-content;
     box-shadow: 8px 8px black;
     border-radius: 20px;
-    margin: 8px;
+    margin: 8px 0px;
     display: flex;
     flex-direction: column;
 }
@@ -95,7 +120,7 @@ nav {
 
 .project-card>img {
     height: 40%;
-    width: 100%;
+    width: auto;
     border-radius: 20px 20px 0px 0px;
     background-color: black;
 }
@@ -104,78 +129,50 @@ nav {
     padding: 2px 8px;
 }
 
-a,
-a:visited {
-    color: red;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 .blog-card {
     background-color: white;
 }
 
-#card {
+.summary-card {
     border: 1px black solid;
     border-radius: 20px;
     background-color: white;
     box-shadow: 8px 8px black;
     color: black;
-    width: 500px;
-    height: 240px;
     justify-content: space-between;
 }
 
-#card>h5 {
+.summary-card>h5 {
     padding-top: 4px;
     text-align: center;
 }
 
-#card-content {
+.summary-card {
     padding: 16px 32px;
     display: flex;
 }
 
-#card-image {
+.summary-card-image {
     margin-left: 40px;
     text-align: center;
 }
 
-#card-image>img {
-    width: 120px;
-    height: 120px;
+.summary-card-image>img {
+    max-width: 100%;
+    height: auto;
     border-radius: 20px;
     background-color: black;
 }
 
-#card-text>h4 {
+.summary-card-text>h4 {
     background-color: black;
     color: white;
-    padding-left: 4px;
-    padding-top: 4px;
-    padding-bottom: 1px;
-}
-
-#card-text>p {
-    padding-left: 8px;
-    padding-bottom: 8px;
 }
 
 #links {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-}
-
-header {
-    margin-bottom: auto;
-}
-
-footer {
-    margin-top: auto;
 }
 
 /* Scroll Animation */
@@ -225,59 +222,43 @@ footer {
     }
 }
 
-@media only screen and (max-width: 1150px) {
-    #card {
-        width: auto;
+@media screen and (max-width: 900px) {
+    body {
+        font-size: 1.8vw;
     }
 
-    #card {
-        font-size: calc(0.7vw + 0.7vh);
+    #blogs {
+        margin-top: 2vw;
+    }
+
+    main {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "summary blogs" "summary projects";
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media screen and (max-width: 649px) {
     body {
-        height: 100%;
-        overflow-y: visible;
+        font-size: calc(1vw + 1.2vh);
     }
 
-    footer {
-        margin-top: 12px;
-    }
-
-    #card {
-        font-size: calc(1.2vw + 1.2vh);
-        height: fit-content;
+    main {
+        display: flex;
+        flex-direction: column;
     }
 
     #summary {
         order: 1;
+        margin-bottom: 12px;
     }
 
     #projects {
+        margin: 12px 0px;
         order: 2;
     }
 
     #blogs {
         order: 3;
-    }
-    
-    #projects, #links, #blogs {
-        overflow: visible;
-    }
-
-    main {
-        flex-direction: column;
-        align-items: center;
-        height: fit-content
-    }
-
-    #card-image > img {
-        width: 100px;
-        height: 100px;
-    }
-
-    #blogs {
-        margin: 16px 0px;
     }
 }
