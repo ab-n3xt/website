@@ -220,6 +220,16 @@ nav {
     }
 }
 
+@-webkit-keyframes linear-scroll-left {
+    0% {
+        -webkit-transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(-100%, 0);
+    }
+}
+
 @keyframes linear-scroll-right {
     0% {
         transform: translate(-100%, 0);
@@ -227,6 +237,16 @@ nav {
 
     100% {
         transform: translate(0, 0);
+    }
+}
+
+@-webkit-keyframes linear-scroll-right {
+    0% {
+        -webkit-transform: translate(-100%, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
     }
 }
 
