@@ -8,252 +8,103 @@
 }
 
 a,
+a:link,
 a:visited {
-    color: red;
-    text-decoration: none;
+    text-decoration: underline;
+    color: white;
+    padding: 4px;
+    border-radius: 8px;
 }
 
 a:hover {
-    text-decoration: underline;
-}
-
-html {
-    overflow: hidden;
+    background-color: rgba(200,200,200,0.9);
+    color: rgba(4,4,4,0.9);
 }
 
 body {
-    background-color: white;
+    background-color: rgba(4,4,4,0.9);
+    color: white;
     display: grid;
-    overflow: hidden;
-    grid-template-rows: 2ch 1fr 2ch;
+    grid-template-rows: 40px 1fr 80px;
     grid-template-areas: "header" "main" "footer";
     height: 100vh;
-    font-size: 1.3vw;
-    max-width: 100%;
 }
-
-header {
-    grid-area: header;
-    overflow: hidden;
-}
-
-footer {
-    grid-area: footer;
-    overflow: hidden;
-}   
 
 header, footer {
-    background: black;
-    color: white;
-    height: 2ch;
-}
-
-main {
-    grid-area: main;
-    color: white;
-    display: grid;
-    padding: 12px;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: minmax(0, 1fr);
-    column-gap: 2vw;
-    grid-template-areas: "projects summary blogs";
-    min-height: 0;
-    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 nav {
     display: flex;
-    justify-content: space-around;
 }
 
-#summary {
-    grid-area: summary;
+header > nav > a:not(:first-child),
+footer > div > a:not(:first-child) {
+    margin-left: 24px;
+}
+
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#projects, #links, #blogs {
-    color: black;
-    border: 1px black solid;
-    border-radius: 20px;
-    padding: 8px;
-    box-shadow: 8px 8px black;
-    overflow: auto;
-    min-width: 0;
-}
-
-#projects>h1 {
-    color: black;
-}
-
-.card-list {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 10px;
     align-items: center;
 }
 
-.project-card {
-    background-color: white;
-    border: 1px solid black;
-    width: 100%;
-    height: min-content;
-    box-shadow: 8px 8px black;
-    border-radius: 20px;
-    margin: 8px 0px;
-    display: flex;
-    flex-direction: column;
+#name {
+    animation: opacityFadeIn 2s;
+    font-size: 5vw;
 }
 
-.project-card > a:last-child {
-    padding: 2px 0px;
-    text-align: center;
-    margin-top: auto;
+#position {
+    animation: opacityFadeInDelay 3s;
+    font-size: 2vw;
 }
 
-.project-card>h4 {
-    border-radius: 20px 20px 0px 0px;
-    color: white;
-    background-color: black;
-    padding-left: 16px;
+#github-link, #github-link > a {
+    color: rgba(200,200,200,0.5)
 }
 
-/* .project-card>img {
-    height: 40%;
-    width: auto;
-    border-radius: 20px 20px 0px 0px;
-    background-color: black;
-} */
+#github-link > a:hover {
+    background-color: initial;
+}
+ 
+@keyframes opacityFadeIn {
+    0% {
+        opacity: 0;
+    }
 
-.project-card > p {
-    padding: 2px 16px;
+    100% {
+        opacity: 1;
+    }
 }
 
-.blog-card {
-    background-color: white;
+@keyframes opacityFadeInDelay {
+    0% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
-.summary-card {
-    border: 1px black solid;
-    border-radius: 20px;
-    background-color: white;
-    box-shadow: 8px 8px black;
-    color: black;
-    justify-content: space-between;
-    padding: 8px 32px;
+#summary {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 3fr;
     column-gap: 1vw;
 }
 
-.summary-card>h5 {
-    padding-top: 4px;
-    text-align: center;
-}
-
-.summary-card-image {
-    margin-left: 20px;
-    align-self: center;
-}
-
-.summary-card-image>img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    background-color: black;
-}
-
-.summary-card-text {
-    align-self: center;
-}
-
-.summary-card-text>h4 {
-    background-color: black;
-    color: white;
-    padding-left: 2px;
-}
-.summary-card-text>p {
-    padding-top: 2px;
-}
-
-#links {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-/* Scroll Animation */
-/* Taken from: https://stackoverflow.com/a/45847760/15637382 */
-.linear-scroll {
-    margin: 0 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    position: absolute;
-}
-
-.linear-scroll-left span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: linear-scroll-left 20s linear infinite;
-    animation-delay: -10s;
-}
-
-.linear-scroll-right span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: linear-scroll-right 20s linear infinite;
-    animation-delay: -10s;
-}
-
-.linear-scroll-left-2 span, .linear-scroll-right-2 span {
-    animation-delay: 0s;
-}
-
-@keyframes linear-scroll-left {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(-100%, 0);
-    }
-}
-
-@-webkit-keyframes linear-scroll-left {
-    0% {
-        -webkit-transform: translate(0, 0);
-    }
-
-    100% {
-        -webkit-transform: translate(-100%, 0);
-    }
-}
-
-@keyframes linear-scroll-right {
-    0% {
-        transform: translate(-100%, 0);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-@-webkit-keyframes linear-scroll-right {
-    0% {
-        -webkit-transform: translate(-100%, 0);
-    }
-
-    100% {
-        -webkit-transform: translate(0, 0);
-    }
-}
-
 @media screen and (max-width: 900px) {
-    body {
+    /* body {
         font-size: 1.8vw;
-    }
+    } */
 
     #blogs {
         margin-top: 2vw;
@@ -267,9 +118,9 @@ nav {
 }
 
 @media screen and (max-width: 649px) {
-    body {
+    /* body {
         font-size: calc(1vw + 1.2vh);
-    }
+    } */
 
     main {
         display: flex;
