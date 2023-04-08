@@ -17,10 +17,15 @@ I stumbled upon a thread on [Hacker News](https://news.ycombinator.com/item?id=3
 ```
 Simply answer the following 2 questions briefly in plain English.
 
-1. Why do you want to take this role?
-2. Why are you a good fit for this role?
+1. Why do you want to take this role? (Q1)
+2. Why are you a good fit for this role? (Q2)
 ```
 
-It was very sound advice, and I'm sure the employers wouldn't mind it either. However, it made me question a lot of positions I applied for. I did not answer those questions, rather just splay my experience on a document and hope my future employer can connect the dots and see that I am a good fit.
+It was very sound advice (I'm sure the employers wouldn't mind it either). However, it made me question a lot of positions I applied for. I either applied to jobs I wasn't really interested in (*making Q1 hard to answer*), or applied to jobs with excessive/unclear details (*making Q2 hard to see*).
 
-From now on, I shall seek opportunities that better align with my experience and clearly write it out.
+From now on, I have learned to:
+
+1. Seek opportunities that better align with my experience and values.
+2. Clearly write it out to the employer.
+
+Thank you _jensneuse_ for your advice.
