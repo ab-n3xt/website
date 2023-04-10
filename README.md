@@ -1,3 +1,3 @@
 # Personal Website
 
-Done with [Hugo]['https://gohugo.io']
+Done with [Hugo]('https://gohugo.io')
