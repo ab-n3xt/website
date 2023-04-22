@@ -1,3 +1,9 @@
+---
+title: "Introspection 02"
+date: 2023-04-21T21:24:18-04:00
+draft: false
+---
+
 I started to watch [Lex Fridman's podcast with Max Tegmark](https://youtu.be/VcVfceTsD0A) today and usually with long videos, I like to first look at the comments to get others' reaction. I see the first comment quoting something the guest says: "We're rushing towards a cliff, but the closer we get, the more scenic the views are." (in reference to AI development).
 
 This is quite a powerful, and scary, statement for two reasons:
