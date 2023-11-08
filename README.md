@@ -1,3 +1,5 @@
 # Personal Website
 
-Done with [Hugo]('https://gohugo.io')
+Done with HTML, CSS, and a hint of Javascript.
+
+Photo of myself taken by Andrew Doh.
