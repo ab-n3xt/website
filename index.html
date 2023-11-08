@@ -13,31 +13,39 @@
 
 <body>
     <header>
-        <img src="assets/profile.jpg" alt="">
+        <img src="assets/profile.jpg" alt="">   
     </header>
     <main>
         <h1>Aidan Buchanan</h1>
         <h2>Web Developer and Marketer</h2>
         <nav>
-            <a href="#">PROJECTS</a>
-            <a href="#">RESUME</a>
-            <a href="#">CONTACT</a>
+            <a href="projects.html">PROJECTS</a>
+            <a id="resume-button" onclick="comingSoon()" href="#">RESUME</a>
+            <a href="mailto:aidan.buchanan@gmail.com">CONTACT</a>
         </nav>
     </main>
     <footer>
-        <a href="#">
+        <a target="_blank" href="https://github.com/ab-n3xt">
             <img src="assets/github.svg" alt="">
         </a>
-        <a href="#">
+        <a target="_blank" href="https://www.linkedin.com/in/aidan-buchanan/">
             <img src="assets/linkedin.svg" alt="">
         </a>
-        <a href="#">
+        <a target="_blank" href="https://www.facebook.com/profile.php?id=100078225482600">
             <img src="assets/facebook.svg" alt="">
         </a>
-        <a href="#">
+        <a target="_blank" href="https://www.instagram.com/aidan_n3xt/">
             <img src="assets/instagram.svg" alt="">
         </a>
     </footer>
+
+    <script>
+        const resumeButton = document.getElementById("resume-button");
+        
+        resumeButton.addEventListener("click", () => {
+            resumeButton.innerText = "COMING SOON"
+        });
+    </script>
 </body>
 
 </html>
