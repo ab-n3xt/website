@@ -107,10 +107,15 @@ main > nav > a:not(:first-child) {
 
 footer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: auto;
-    margin-bottom: 57px;
+    margin-left: 48px;
+    margin-bottom: 58px;
     grid-area: footer;
+}
+
+footer > a:not(:first-child) {
+    margin-left: 16px;
 }
 
 h1 {
