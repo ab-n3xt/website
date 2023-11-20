@@ -165,13 +165,31 @@ header > img {
     margin-left: 48px;
 }
 
-@media screen and (max-height: 624px) {
+@media screen and (max-height: 700px) {
     main {
         padding-top: 80px;
     }
 
     main > nav {
-        margin-top: 40px;
+        margin-top: 80px;
+    }
+
+    footer {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-height: 510px) {
+    main {
+        padding-top: 24px;
+    }
+
+    main > nav {
+        margin-top: 24px;
+    }
+
+    footer {
+        margin-bottom: 12px;
     }
 }
 
