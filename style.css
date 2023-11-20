@@ -165,6 +165,16 @@ header > img {
     margin-left: 48px;
 }
 
+@media screen and (max-height: 624px) {
+    main {
+        padding-top: 80px;
+    }
+
+    main > nav {
+        margin-top: 40px;
+    }
+}
+
 @media screen and (min-width: 600px) {
     header {
         display: block;
