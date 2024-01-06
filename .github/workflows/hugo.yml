@@ -40,7 +40,7 @@ jobs:
       - name: Add Hugo-Theme Paper Mod
         run: |
           git clone https://github.com/adityatelange/hugo-PaperMod ./website/themes/PaperMod --depth=1
-          echo $PATH
+          echo $HOME
       - name: Install Dart Sass
         run: sudo snap install dart-sass
       - name: Checkout
