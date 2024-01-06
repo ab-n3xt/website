@@ -38,7 +38,7 @@ jobs:
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Add Hugo-Theme Paper Mod
-        run: git clone https://github.com/adityatelange/hugo-PaperMod ${{ runner.temp }}/themes/PaperMod --depth=1
+        run: git clone https://github.com/adityatelange/hugo-PaperMod /home/runner/work/website/website/themes/PaperMod --depth=1
       - name: Install Dart Sass
         run: sudo snap install dart-sass
       - name: Checkout
