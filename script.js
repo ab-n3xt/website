@@ -1,8 +1,9 @@
 const DEBUG = true;
+/*== SPA Functionality ==*/
 const headerNavLinks = document.getElementsByTagName('nav')[0].children;
 
 for (var i = 0; i < headerNavLinks.length; i++) {
-    (function() {
+    (function () {
         const headerNavLink = headerNavLinks[i];
         const headerNavLinkName = headerNavLink.getAttribute('name');
         headerNavLinks[i].addEventListener("click", () => {
@@ -21,5 +22,7 @@ async function loadHTML(name) {
     contentDiv.innerHTML = await fetchHtmlAsText(nameOfFile);
 }
 
-
-
+/*== Animated subtitle ==*/
+var jobTitles = ["Programmer", "Digital Marketer"];
+var index = 0;
+var animatedJobTitle = document.querySelector(".animatedJobTitle");

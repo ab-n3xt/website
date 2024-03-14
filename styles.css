@@ -17,60 +17,58 @@ a:visited {
 }
 
 a:hover {
-    background-color: rgba(200,200,200,0.9);
-    color: rgba(4,4,4,0.9);
+    background-color: rgba(200, 200, 200, 0.9);
+    color: rgba(4, 4, 4, 0.9);
 }
 
 body {
-    background-color: rgba(4,4,4,0.9);
+    background-color: rgba(4, 4, 4, 0.9);
     color: white;
     display: grid;
-    grid-template-rows: 40px 1fr 80px;
+    grid-template-rows: 40px 1fr 60px;
     grid-template-areas: "header" "main" "footer";
     height: 100vh;
+    margin-left: 8px;
 }
 
-header, footer {
+header,
+footer {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
+    font-weight: 200;
+}
+
+#github-link,
+#github-link>a {
+    padding-left: 4px;
+    color: grey;
 }
 
 nav {
     display: flex;
 }
 
-header > nav > a:not(:first-child),
-footer > div > a:not(:first-child) {
-    margin-left: 24px;
+header>nav>a:not(:last-child),
+footer>nav>a:not(:last-child) {
+    margin-right: 16px;
+}
+
+footer>:first-child {
+    margin-bottom: 4px;
 }
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
-#name {
-    animation: opacityFadeIn 2s;
-    font-size: 5vw;
+main>h1 {
+    font-size: 80px;
+    font-weight: 100;
 }
 
-#position {
-    animation: opacityFadeInDelay 3s;
-    font-size: 2vw;
-}
-
-#github-link, #github-link > a {
-    color: rgba(200,200,200,0.5)
-}
-
-#github-link > a:hover {
-    background-color: initial;
-}
- 
 @keyframes opacityFadeIn {
     0% {
         opacity: 0;
@@ -81,63 +79,14 @@ main {
     }
 }
 
-@keyframes opacityFadeInDelay {
-    0% {
-        opacity: 0;
-    }
-
-    66% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.ml12 {
+    font-weight: 200;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
 }
 
-#summary {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    column-gap: 1vw;
-}
-
-@media screen and (max-width: 900px) {
-    /* body {
-        font-size: 1.8vw;
-    } */
-
-    #blogs {
-        margin-top: 2vw;
-    }
-
-    main {
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: 50% 50%;
-        grid-template-areas: "summary blogs" "summary projects";
-    }
-}
-
-@media screen and (max-width: 649px) {
-    /* body {
-        font-size: calc(1vw + 1.2vh);
-    } */
-
-    main {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #summary {
-        order: 1;
-        margin-bottom: 12px;
-    }
-
-    #projects {
-        margin: 12px 0px;
-        order: 2;
-    }
-
-    #blogs {
-        order: 3;
-    }
+.ml12 .letter {
+    display: inline-block;
+    line-height: 1em;
 }
