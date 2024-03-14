@@ -42,15 +42,6 @@ for(const jobTitle of jobTitles) {
     spannedJobTitles.push(newJobTitle);
 }
 
-animatedJobTitle.innerHTML = spannedJobTitles[index];
-const letters = document.querySelectorAll(".letter");
-const lastLetter = letters[letters.length-1];
-lastLetter.addEventListener("animationend", () => {
-    index += 1;
-    if(index >= spannedJobTitles.length) index = 0;
-    animatedJobTitle.innerHTML = spannedJobTitles[index];
-})
-
 // identify an element to observe
 var elementToObserve = window.document.getElementById('animatedJobTitle');
 
@@ -69,3 +60,5 @@ var observer = new MutationObserver(function(mutationsList, observer) {
 // call 'observe' on that MutationObserver instance, 
 // passing it the element to observe, and the options object
 observer.observe(elementToObserve, {childList: true});
+
+animatedJobTitle.innerHTML = spannedJobTitles[index];
