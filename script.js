@@ -28,7 +28,7 @@ var delay = 0.1;
 const delayRate = 0.05;
 var animatedJobTitle = document.querySelector(".animatedJobTitle");
 
-const jobTitles = ["Programmer", "Digital Marketer"];
+const jobTitles = ["Programmer", "Digital Marketer", "E-Commerce"];
 const spannedJobTitles = []
 for(const jobTitle of jobTitles) {
     var newJobTitle = new String();
@@ -39,6 +39,7 @@ for(const jobTitle of jobTitles) {
         newJobTitle = newJobTitle.concat(newLetter);
         delay += delayRate;
     }
+    delay = 0.1;
     spannedJobTitles.push(newJobTitle);
 }
 
