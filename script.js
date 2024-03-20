@@ -1,6 +1,4 @@
 const DEBUG = true;
-/*== Animated hoverbar ==*/
-
 
 /*== Animated subtitle ==*/
 var index = 0;
@@ -10,11 +8,11 @@ var animatedJobTitle = document.querySelector(".animatedJobTitle");
 
 const jobTitles = ["Digital Marketing", "E-Commerce", "Web Development"];
 const spannedJobTitles = []
-for(const jobTitle of jobTitles) {
+for (const jobTitle of jobTitles) {
     var newJobTitle = new String();
-    for(const letter of jobTitle) {
+    for (const letter of jobTitle) {
         var newLetter = new String();
-        if (letter === ' ') newLetter = `<span style='animation-delay: ${delay}s' class='letter'>&nbsp</span>` ;
+        if (letter === ' ') newLetter = `<span style='animation-delay: ${delay}s' class='letter'>&nbsp</span>`;
         else newLetter = `<span style='animation-delay: ${delay}s' class='letter'>${letter}</span>`;
         newJobTitle = newJobTitle.concat(newLetter);
         delay += delayRate;
@@ -28,18 +26,18 @@ var elementToObserve = window.document.getElementById('animatedJobTitle');
 
 // create a new instance of 'MutationObserver' named 'observer', 
 // passing it a callback function
-var observer = new MutationObserver(function(mutationsList, observer) {
+var observer = new MutationObserver(function (mutationsList, observer) {
     const letters = document.querySelectorAll(".letter");
-    const lastLetter = letters[letters.length-1];
+    const lastLetter = letters[letters.length - 1];
     lastLetter.addEventListener("animationend", () => {
         index += 1;
-        if(index >= spannedJobTitles.length) index = 0;
+        if (index >= spannedJobTitles.length) index = 0;
         animatedJobTitle.innerHTML = spannedJobTitles[index];
     })
 });
 
 // call 'observe' on that MutationObserver instance, 
 // passing it the element to observe, and the options object
-observer.observe(elementToObserve, {childList: true});
+observer.observe(elementToObserve, { childList: true });
 
 animatedJobTitle.innerHTML = spannedJobTitles[index];
