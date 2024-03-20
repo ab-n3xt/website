@@ -10,15 +10,20 @@
 a,
 a:link,
 a:visited {
-    text-decoration: underline;
     color: white;
     padding: 4px;
-    border-radius: 8px;
 }
 
 a:hover {
-    background-color: rgba(200, 200, 200, 0.9);
-    color: rgba(4, 4, 4, 0.9);
+    font-weight: 400;
+}
+
+.active-link {
+    font-weight: 400;
+}
+
+header a {
+    text-decoration: none;
 }
 
 body {
@@ -61,12 +66,35 @@ footer>:first-child {
 main {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
-main>h1 {
+main>div>h1 {
     font-size: 80px;
+    font-weight: 200;
+}
+
+main>div>h2 {
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+main>p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
     font-weight: 100;
+}
+
+#hover-bar {
+    position: relative;
+    height: 2px;
+    width: 30px;
+    background-color: white;
+    margin-left: 4px;
 }
 
 @keyframes letterFadeInAndOut {
@@ -92,10 +120,9 @@ main>h1 {
 }
 
 .animatedJobTitle {
-    font-weight: 200;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    letter-spacing: 0.5em;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    text-align: end;
 }
 
 .letter {
