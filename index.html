@@ -8,10 +8,13 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script type="module" src="script.js"></script>
 
-    <!-- Load Google Font 'Raleway' -->
+    <!-- Load Google Font 'Raleway', 'Urbanist', 'Playfair' -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
     <title>Aidan Buchanan</title>
@@ -19,18 +22,44 @@
 
 <body>
     <header>
+        <h1>A.B. Consulting</h1>
         <nav>
             <a class="active" href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
         </nav>
     </header>
-    
-    <main>
+
+    <main class="index">
         <div>
-            <h2>Aidan Buchanan</h2>
-            <h1>Consultancy</h1>
-            <h2 id="animatedJobTitle" class="animatedJobTitle"></h2>
+            <h1>Helping <span>you</span> bring users<br>closer to your business.</h1>
+            <!-- <h2 id="animatedJobTitle" class="animatedJobTitle"></h2> -->
+        </div>
+        <div>
+            <h2>Services Offered</h2>
+            <div class="cards">
+                <div class="card">
+                    <article>
+                        <h3>Digital Marketing</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam inventore eos soluta delectus officiis aut, eaque numquam, adipisci quibusdam enim debitis sunt quo quae, nostrum maxime? Aut maxime voluptas laborum.</p>
+                    </article>
+                    <img src="assets/digital-marketing.svg" alt="Icon image of a magnifying glass and charts, representing business analytics.">
+                </div>
+                <div class="card">
+                    <article>
+                        <h3>E-Commerce</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam inventore eos soluta delectus officiis aut, eaque numquam, adipisci quibusdam enim debitis sunt quo quae, nostrum maxime? Aut maxime voluptas laborum.</p>
+                    </article>
+                    <img src="assets/storefront.svg" alt="Icon image of a building that represents a store.">
+                </div>
+                <div class="card">
+                    <article>
+                        <h3>Web Development</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam inventore eos soluta delectus officiis aut, eaque numquam, adipisci quibusdam enim debitis sunt quo quae, nostrum maxime? Aut maxime voluptas laborum.</p>
+                    </article>
+                    <img src="assets/web-development.svg" alt="Icon image of a browser with code and a gear symbol, representing web development.">
+                </div>
+            </div>
         </div>
     </main>
 
