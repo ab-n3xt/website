@@ -33,7 +33,8 @@ a::before {
     transform-origin: top left;
 }
 
-a:hover::before, .active::before {
+a:hover::before,
+.active::before {
     transform: scaleX(1);
 }
 
@@ -109,11 +110,12 @@ main {
     justify-content: center;
 }
 
-.index {
-    margin-top: 45vh;
+main>div:last-child {
+    margin-bottom: 100px;
 }
 
-main>div>h1, h1>span {
+main>div>h1,
+h1>span {
     font-size: 5rem;
     font-weight: 600;
     font-family: 'Urbanist', sans-serif;
@@ -177,6 +179,14 @@ article>section>p:not(:first-child) {
     margin-top: 12px;
 }
 
+article {
+    margin-top: 12px;
+}
+
+article>button {
+    margin-top: 32px;
+}
+
 @keyframes letterFadeInAndOut {
     0% {
         opacity: 0;
@@ -199,6 +209,30 @@ article>section>p:not(:first-child) {
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.fadeInContent {
+    position: relative;
+    transform: translateY(-40px);
+    opacity: 0;
+    transition: 0.8s all ease;
+}
+
+.fadeInContent.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
 .animatedJobTitle {
     letter-spacing: 4px;
     margin-top: 32px;
@@ -214,9 +248,16 @@ article>section>p:not(:first-child) {
     line-height: 1em;
 }
 
+.index {
+    margin-top: 60vh;
+}
+
+.contact-info {
+    text-align: center;
+}
+
 .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     grid-gap: 12px;
     margin-top: 24px;
 }
@@ -229,47 +270,54 @@ article>section>p:not(:first-child) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 24px;
     align-items: center;
+    max-width: 920px;
 }
 
-.card > article > h3 {
+.card>article {
+    margin-top: 0px;
+}
+
+.card>article>h3 {
     margin-top: 12px;
     font-size: 1.6rem;
     line-height: 1.5em;
 }
 
-.card > article > p {
+.card>article>p {
     margin-top: 12px;
     font-size: 1rem;
     line-height: 1.5em;
 }
 
-.card > img {
+.card>img {
     height: 240px;
     width: 100%;
 }
 
 .project-cards {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 24px;
+    grid-gap: 12px;
 }
 
 .project-card {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    grid-gap: 12px;
-    max-width: 1080px;
+    border: 1px solid #E6E8E6;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 920px;
+    min-height: 200px;
 }
 
-.project-card>img {
-    height: 360px;
+.project-card>article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 0px;
 }
 
 .project-card>article>h3 {
     font-size: 1.6rem;
     line-height: 1.5em;
-
 }
 
 .project-card>article>p {
@@ -277,10 +325,45 @@ article>section>p:not(:first-child) {
 }
 
 .project-card>article>button {
-    margin-top: 32px;
+    margin-top: auto;
+    width: fit-content;
 }
 
-@media screen and (max-width: 512px) {
+@media screen and (max-width: 2058px) {
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        max-width: 634px;
+    }
+
+    .project-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project-card {
+        max-width: 634px;
+    }
+
+    .index {
+        margin-top: 25vh;
+    }
+}
+
+@media screen and (max-width: 964px) {
+
+    main>div>h1,
+    main>div>h1>span {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 682px) {
     body {
         margin: 0px 20px;
         padding: 16px 0px;
@@ -290,7 +373,7 @@ article>section>p:not(:first-child) {
     .index {
         margin-top: 10vh;
     }
-    
+
     header {
         flex-direction: column;
         align-items: center;
@@ -301,8 +384,9 @@ article>section>p:not(:first-child) {
         margin-top: 8px;
     }
 
-    main>div>h1, main>div>h1>span {
-        font-size: 2.2rem;
+    main>div>h1,
+    main>div>h1>span {
+        font-size: 2.6rem;
     }
 
     .cards {
@@ -312,9 +396,24 @@ article>section>p:not(:first-child) {
 
     .card {
         grid-template-columns: 1fr;
+        width: auto;
     }
 
-    .card > img {
+    .card>img {
         display: none;
+    }
+
+    .project-cards {
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    .project-card>article>button {
+        align-self: center;
+        margin-top: 24px;
+    }
+
+    footer {
+        align-items: center;
     }
 }
