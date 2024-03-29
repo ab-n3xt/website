@@ -303,17 +303,17 @@ article>button {
 
 .project-cards {
     display: flex;
+    grid-template-columns: 1fr 1fr;
     margin-top: 24px;
     grid-gap: 12px;
-    max-width: 720px;
 }
 
 .project-card {
     border: 1px solid #E6E8E6;
     border-radius: 8px;
     padding: 24px;
-    max-width: 920px;
     min-height: 200px;
+    max-width: 720px;
 }
 
 .project-card>article {
@@ -337,21 +337,10 @@ article>button {
     width: fit-content;
 }
 
-@media screen and (max-width: 2058px) {
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .project-cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .project-card {
-        max-width: 634px;
+@media screen and (max-width: 1558px) {
+    .cards, .project-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     .index {
@@ -359,14 +348,16 @@ article>button {
     }
 }
 
-@media screen and (max-width: 964px) {
+@media screen and (max-width: 1000px) {
     main>div>h1,
     main>div>h1>span {
         font-size: 3.5rem;
     }
 
-    .project-card {
-        width: 300px;
+    .cards, .project-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .project-card>article>p {
@@ -413,6 +404,7 @@ article>button {
 
     .card {
         grid-template-columns: 1fr;
+        width: auto;
     }
 
     .card>img {
