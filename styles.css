@@ -110,6 +110,13 @@ main {
     justify-content: center;
 }
 
+main>article {
+    display: flex;
+    grid-gap: 12px;
+    max-width: 1080px;
+    align-self: center;
+}
+
 main>div:last-child {
     margin-bottom: 100px;
 }
@@ -153,13 +160,6 @@ main>p {
     font-weight: 100;
 }
 
-main>article {
-    max-width: 812px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 12px;
-}
-
 article>section {
     display: flex;
     flex-direction: column;
@@ -194,40 +194,6 @@ article>button {
     margin-top: 32px;
 }
 
-@keyframes letterFadeInAndOut {
-    0% {
-        opacity: 0;
-        transform: translate(40px);
-    }
-
-    20% {
-        opacity: 1;
-        transform: translate(0px);
-    }
-
-    80% {
-        opacity: 1;
-        transform: translate(0px);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(-40px);
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
 .fadeInContent {
     position: relative;
     transform: translateY(-40px);
@@ -240,19 +206,28 @@ article>button {
     opacity: 1;
 }
 
-.animatedJobTitle {
-    letter-spacing: 4px;
-    margin-top: 32px;
+.fadeInLeftContent {
+    position: relative;
+    transform: translateX(-40px);
+    opacity: 0;
+    transition: 0.8s all ease;
 }
 
-.letter {
+.fadeInLeftContent.active {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.fadeInRightContent {
+    position: relative;
+    transform: translateX(40px);
     opacity: 0;
-    animation-name: letterFadeInAndOut;
-    animation-duration: 2.5s;
-    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    animation-fill-mode: forwards;
-    display: inline-block;
-    line-height: 1em;
+    transition: 0.8s all ease;
+}
+
+.fadeInRightContent.active {
+    transform: translateX(0px);
+    opacity: 1;
 }
 
 .index {
@@ -299,6 +274,11 @@ article>button {
 .card>img {
     height: 240px;
     width: 100%;
+}
+
+.portrait {
+    object-fit: contain;
+    width: 300px;
 }
 
 .project-cards {
@@ -391,6 +371,14 @@ article>button {
         margin-top: 8px;
     }
 
+    main>article {
+        flex-direction: column;
+    }
+
+    main>article>section>p {
+        text-align: left;
+    }
+
     main>div>h1,
     main>div>h1>span {
         font-size: 2.6rem;
@@ -409,6 +397,12 @@ article>button {
 
     .card>img {
         display: none;
+    }
+
+    .portrait {
+        max-height: 600px;
+        max-width: 100%;
+        width: auto;
     }
 
     .project-cards {
