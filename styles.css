@@ -112,7 +112,7 @@ main {
 
 main>article {
     display: flex;
-    grid-gap: 12px;
+    grid-gap: 24px;
     max-width: 1080px;
     align-self: center;
 }
@@ -400,7 +400,7 @@ article>button {
     }
 
     .portrait {
-        max-height: 600px;
+        max-height: 450px;
         max-width: 100%;
         width: auto;
     }
