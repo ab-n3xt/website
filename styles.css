@@ -49,6 +49,7 @@ header a {
 
 body {
     background-color: #191919;
+    background-image: url("/assets/website-bg.svg");
     color: white;
     display: grid;
     grid-template-rows: 100px 1fr 100px;
@@ -64,6 +65,7 @@ body {
 header,
 footer {
     align-items: center;
+    background-color: #191919;
     display: flex;
     font-weight: 200;
     font-family: 'Urbanist', sans-serif;
@@ -105,6 +107,7 @@ footer>:first-child {
 }
 
 main {
+    background-color: #191919;
     display: flex;
     flex-direction: column;
     justify-content: center;
