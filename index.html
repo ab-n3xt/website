@@ -31,10 +31,10 @@
 
     <main class="index">
         <div>
-            <h1>Helping <span>you</span> bring users<br>closer to your business.</h1>
+            <h1 class="fadeInLeftContent">Helping <span>you</span> bring users<br>closer to your business.</h1>
         </div>
         <div>
-            <h2>Services Offered</h2>
+            <h2 class="fadeInContent">Services Offered</h2>
             <div class="cards">
                 <div class="card fadeInContent">
                     <article>
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div>
-            <h2 id="projects">Projects</h2>
+            <h2 id="projects" class="fadeInContent">Projects</h2>
             <div class="project-cards fadeInContent">
                 <div class="project-card fadeInContent">
                     <article>
@@ -88,6 +88,10 @@
         <p id="github-link">Hosted on <a href="https://pages.github.com/"> Github Pages</a></p>
     </footer>
 
-</body>
+    <script>
+        const h = document.querySelector("main>div>h1");
+        h.classList.add("active");
+    </script>
 
+</body>
 </html>
