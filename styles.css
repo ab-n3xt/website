@@ -175,6 +175,7 @@ article>section>p {
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0.6px;
+    line-height: 1.5rem;
 }
 
 article>section>p:not(:first-child) {
@@ -233,7 +234,7 @@ article>button {
 }
 
 .index {
-    margin-top: 60vh;
+    margin-top: 50vh;
 }
 
 .contact-info {
@@ -303,14 +304,14 @@ article>button {
     width: 300px;
 }
 
-.project-cards {
+.project-cards, .blog-cards {
     display: flex;
     grid-template-columns: 1fr 1fr;
     margin-top: 24px;
     grid-gap: 12px;
 }
 
-.project-card {
+.project-card, .blog-card {
     border: 1px solid #E6E8E6;
     border-radius: 8px;
     padding: 24px;
@@ -318,29 +319,29 @@ article>button {
     max-width: 720px;
 }
 
-.project-card>article {
+.project-card>article, .blog-card>article {
     display: flex;
     flex-direction: column;
     height: 100%;
     margin-top: 0px;
 }
 
-.project-card>article>h3 {
+.project-card>article>h3, .blog-card>article>h3 {
     font-size: 1.6rem;
     line-height: 1.5em;
 }
 
-.project-card>article>p {
+.project-card>article>p, .blog-card>article>p {
     margin-top: 8px;
 }
 
-.project-card>article>button {
+.project-card>article>button, .blog-card>article>button {
     margin-top: auto;
     width: fit-content;
 }
 
 @media screen and (max-width: 1558px) {
-    .cards, .project-cards {
+    .cards, .project-cards, .blog-cards {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -356,17 +357,17 @@ article>button {
         font-size: 3.5rem;
     }
 
-    .cards, .project-cards {
+    .cards, .project-cards, .blog-cards {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .project-card>article>p {
+    .project-card>article>p, .blog-card>article>p {
         margin-bottom: 24px;
     }
 
-    .project-card>article>button {
+    .project-card>article>button, .blog-card>article>button {
         align-self: center;
         margin-top: auto;
     }
@@ -427,12 +428,12 @@ article>button {
         width: auto;
     }
 
-    .project-cards {
+    .project-cards, .blog-cards {
         padding-left: 0px;
         flex-direction: column;
     }
 
-    .project-card {
+    .project-card, .blog-card {
         width: auto;
     }
 
