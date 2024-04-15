@@ -241,6 +241,16 @@ article>button {
     flex-direction: column;
 }
 
+.blog-article>section pre {
+    margin-top: 32px;
+}
+
+.blog-article>section ul {
+    margin-top: 16px;
+    margin-left: 32px;
+    margin-bottom: 16px;
+}
+
 .blog-article>section>h1 {
     font-size: 3.5rem;
     font-weight: 300;
@@ -252,7 +262,7 @@ article>button {
     margin-top: 16px;
 }
 
-.blog-article>section>p {
+.blog-article>section>p, .blog-article>section>ul>li {
     font-size: 1.2rem;
     line-height: 2rem;
 }

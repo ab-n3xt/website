@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="prism.css">
 
     <!-- Load Google Font 'Urbanist' -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@
         rel="stylesheet">
 
     <title>Aidan Buchanan</title>
+    
 </head>
 
 <body>
@@ -36,17 +37,80 @@
                 <h3>April 15, 2024</h3>
             </section>
             <section>
-                <p>I was helping one of my clients with their Shopify website when I realised Shopify doesn't offer a built-in feature to have a popup appear to new users visiting the website. A feature like this would help immensely to get users interested in a new promotion or to get users to complete a certain action, like signing up for a mailing list.</p>
+                <p>I was helping one of my clients with their Shopify website when I realised Shopify doesn't offer a built-in feature to have a popup appear to new users visiting the website. A feature like this would help immensely to get users to sign up for a mailing list and get the latest on new promotions and products.</p>
                 <p>Therefore, I decided to do some digging around in and found a quick and dirty way to get started.</p>
                 <p>This guide will be for those who already know how to build websites with HTML/CSS/JavaScript, but I'll do my best to go step-by-step so even those without the experience can follow along.</p>
             </section>
             <section>
                 <h2>Approach</h2>
-                <p>First, I tried to run some tests to determine if this was possible to do with as little code as possible.</p>
-                <p>Therefore, I created a single HTML file with the following code:</p>
-                <code>
-                    &lt;
-                </code>
+                <p>To get started, I tried a bare-bone example of what I want to do, with as little code as possible. My goal was to have some text appear on the first visit, and then disappear if I visited (refreshed) the website again. Therefore, I created this single HTML file with the CSS and JS embedded:</p>
+                <pre>
+                    <code class="language-html">
+&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+    ...
+    &#x3C;style&#x3E;
+        .popup {
+            display: none;
+        }
+
+        .popup.active {
+            display: block;
+        }
+    &#x3C;/style&#x3E;
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+    &#x3C;div class=&#x22;popup&#x22;&#x3E;
+        &#x3C;p&#x3E;Sign up now!&#x3C;/p&#x3E;
+        &#x3C;button class=&#x22;form-button&#x22;&#x3E;
+            Click here to sign up!
+        &#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+
+    &#x3C;script&#x3E;
+        var first_visit = { timestamp: new Date().getTime() };
+        var popupElement = document.querySelector(&#x22;.popup&#x22;);
+
+        checkFirstVisit();
+        function checkFirstVisit() {
+
+            if (popupElement) {
+                if (localStorage.getItem(&#x27;was_visited&#x27;)) {
+                    const tenSeconds = 10000; // 1000 * 10;
+                    var last_visit = JSON.parse(localStorage.getItem(&#x27;was_visited&#x27;));
+                    var moreThanTenSeconds = (new Date().getTime() - last_visit.timestamp &#x3C; tenSeconds) ?
+                        false : true;
+                    if (moreThanTenSeconds) {
+                         localStorage.removeItem(&#x27;was_visited&#x27;);
+                         checkFirstVisit();
+                     }
+                 }
+                 else {
+                     localStorage.setItem(&#x27;was_visited&#x27;, JSON.stringify(first_visit));
+                     popupElement.classList.add(&#x22;active&#x22;);
+                 }
+             }
+         }
+ 
+         document.querySelector(&#x22;.form-button&#x22;).addEventListener(&#x22;click&#x22;, () =&#x3E; {
+             popupElement.classList.remove(&#x22;active&#x22;);
+         });
+     &#x3C;/script&#x3E;
+ &#x3C;/body&#x3E;
+ &#x3C;/html&#x3E;
+                    </code>
+                </pre>
+                <p>The key part is in the JavaScript, where the popup element is found and makes the popup appear based on one of the following conditions:</p>
+                <ul>
+                    <li>The user visited for the first time</li>
+                    <li>It has been more than a day since their last visit</li>
+                </ul>
+                <p>This is done through JavaScript's localStorage, a built-in feature where variables and values can be stored in a user's browser. This is what keeps track of a user's last visit.</p>
+                <p>Running the HTML file in the browser shows the popup text. After refreshing, the website no longer shows the text. However, this only lasts for 10 seconds. After 10 seconds, the popup will appear again.</p>
+            </section>
+            <section>
+                <h2>Implementing It in Shopify</h2>
             </section>
         </article>
     </main>
@@ -58,6 +122,8 @@
         </nav>
         <p id="github-link">Hosted on <a href="https://pages.github.com/"> Github Pages</a></p>
     </footer>
+
+    <script src="prism.js" ></script>
 </body>
 
 </html>
