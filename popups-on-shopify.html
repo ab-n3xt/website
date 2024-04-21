@@ -34,7 +34,7 @@
         <article class="blog-article">
             <section>
                 <h1>Popups on Shopify</h1>
-                <h3>April 15, 2024</h3>
+                <h3 class="date">April 15, 2024</h3>
             </section>
             <section>
                 <p>I was helping one of my clients with their Shopify website when I realised Shopify doesn't offer a built-in feature to have a popup appear to new users visiting the website. A feature like this would help immensely to get users to sign up for a mailing list and get the latest on new promotions and products.</p>
@@ -43,7 +43,7 @@
             </section>
             <section>
                 <h2>Approach</h2>
-                <p>To get started, I tried a bare-bone example of what I want to do, with as little code as possible. My goal was to have some text appear on the first visit, and then disappear if I visited (refreshed) the website again. Therefore, I created this single HTML file with the CSS and JS embedded:</p>
+                <p>To get started, I tried a bare-bone example of what I want to do, with as little code as possible. My goal was to have some text appear on the first visit, and then disappear if I visited the website again. Therefore, I created this single HTML file with the CSS and JS embedded:</p>
                 <pre>
                     <code class="language-html">
 &#x3C;!DOCTYPE html&#x3E;
@@ -107,10 +107,12 @@
                     <li>It has been more than a day since their last visit</li>
                 </ul>
                 <p>This is done through JavaScript's localStorage, a built-in feature where variables and values can be stored in a user's browser. This is what keeps track of a user's last visit.</p>
-                <p>Running the HTML file in the browser shows the popup text. After refreshing, the website no longer shows the text. However, this only lasts for 10 seconds. After 10 seconds, the popup will appear again.</p>
+                <p>Running the HTML file in the browser shows the popup text. After refreshing, the website no longer shows the text until after 10 seconds, which is when the popup appears again.</p>
             </section>
             <section>
-                <h2>Implementing It in Shopify</h2>
+                <h2>Adding Code to Shopify</h2>
+                <p>Shopify allows us to change the code of a theme, adding in our own custom components. This part will outline how to add the code above as a drag-and-drop component so we can easily add it to existing pages on our Shopify account.</p>
+                <h3>1. Edit Code</h3>
             </section>
         </article>
     </main>

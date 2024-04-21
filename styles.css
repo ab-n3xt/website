@@ -257,6 +257,11 @@ article>button {
 }
 
 .blog-article>section>h3 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.blog-article>section>h3.date {
     font-size: 1.1rem;
     font-weight: 300;
     margin-top: 16px;
