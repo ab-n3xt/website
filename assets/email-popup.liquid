@@ -1,0 +1,78 @@
+{{ 'popup.css' | asset_url | stylesheet_tag }}
+
+<div class="color-{{ section.settings.color_scheme }}">
+  <img id="popup-image" width="100px" height="auto" src="{{ 'bowl.webp' | asset_url }}" alt="A picture of a bowl">
+  <img class="popup-close" width="25px" height="25px" src="{{ 'xmark-circle-solid.svg' | asset_url }}">
+  <div class="popup-text">
+    <h2>{{ section.settings.title }}</h2>
+    <button class="button form-button">{{ section.settings['button-text'] }}</button>
+  </div>
+</div>
+<script>
+  var first_visit = { timestamp: new Date().getTime() };
+  var popupElement = document.querySelector(".popup");
+
+  checkFirstVisit();
+  function checkFirstVisit() {
+
+      if (popupElement) {
+          if (localStorage.getItem('has_visited')) {
+              const tenSeconds = 1000;
+              var last_visit = JSON.parse(localStorage.getItem('has_visited'));
+              var moreThanTenSeconds = (new Date().getTime() - last_visit.timestamp < tenSeconds) ? false : true;
+              if (moreThanTenSeconds) {
+                  localStorage.removeItem('has_visited');
+                  checkFirstVisit();
+              }
+          }
+          else {
+              localStorage.setItem('has_visited', JSON.stringify(first_visit));
+              popupElement.classList.add("active");
+          }
+      }
+  }
+
+  document.querySelector(".form-button").addEventListener("click", () => {
+    popupElement.classList.remove("active");
+    const footer = document.querySelector(".footer");
+    footer.scrollIntoView({behavior: "smooth"});
+  });
+
+  document.querySelector(".popup-close").addEventListener("click", () => {
+      popupElement.classList.remove("active");
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Email Popup",
+  "tag": "div",
+  "class": "popup",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "email-popup-text",
+      "default": "Subscribe for 10% off your first purchase."
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "button-text",
+      "default": "Go to newsletter signup"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Email Popup"
+    }
+  ]
+}
+{% endschema %}

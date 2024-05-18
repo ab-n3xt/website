@@ -1,0 +1,38 @@
+.popup {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup.active {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.popup > div {
+  background-color: white;
+  display: flex;
+  position: relative;
+  min-width: 400px;
+  width: 25%;
+}
+
+.popup-text {
+  padding: 32px 12px;
+}
+
+#popup-image {
+  object-fit: cover;
+}
