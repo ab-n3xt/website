@@ -1,10 +1,10 @@
 # Popups on Shopify
 __April 15, 2024__
 
-I was helping one of my clients with their Shopify website when I realised Shopify doesn't offer a built-in feature to have a popup appear to new users visiting the website. A feature like this would help immensely to get users to sign up for a mailing list and get the latest on new promotions and products.
+I was helping one of my clients with their Shopify website when I realised Shopify doesn't offer a built-in feature to have a popup appear to new users visiting the website. A feature like this would help immensely to get users to sign up for a mailing list to get the latest on new promotions and products.
 
 Therefore, I decided to do some digging around in and found a quick and dirty way to get started. This guide will be for those who already know how to build websites with HTML/CSS/JavaScript, but I'll do my best to go step-by-step so even those without the experience can follow along.
-            
+
 ## Approach
 To get started, I tried a bare-bone example of what I want to do, with as little code as possible. My goal was to have some text appear on the first visit, and then disappear if I visited the website again.
 
@@ -25,7 +25,7 @@ Therefore, I created this single HTML file with the CSS and JS embedded:
 </head>
 <body>
     <div class="popup">
-        <p>Sign up now!</p>
+        <p>Subscribe for 10% off your first purchase.</p>
         <button class="form-button">
             Click here to sign up!
         </button>
@@ -63,11 +63,10 @@ Therefore, I created this single HTML file with the CSS and JS embedded:
  </body>
  </html>
 ```
+![Popup Example](./01.gif)
 The key part is in the JavaScript, where the popup element is found and makes the popup appear based on one of the following conditions:
 - The user visited for the first time
 - It has been more than a day since their last visit
-                
-This is done through JavaScript's localStorage, a built-in feature where variables and values can be stored in a user's browser. This is what keeps track of a user's last visit. Running the HTML file in the browser shows the popup text. After refreshing, the website no longer shows the text until after 10 seconds, which is when the popup appears again.
                 
 Obviously, it doesn't look that good. Let's change that by upgrading our HTML and CSS (icon provided by Iconoir):
 ```html
@@ -124,11 +123,31 @@ Obviously, it doesn't look that good. Let's change that by upgrading our HTML an
     object-fit: cover;
 }
 ```
-                
-Now the example looks like this:
 ![Gif showing proper example][./02.gif]
 
 ## Adding Code to Shopify
-Shopify allows us to change the code of a theme, adding in our own custom components. This part will outline how to add the code above as a drag-and-drop component so we can easily add it to existing pages on our Shopify account.
+Shopify allows us to change the code within a theme, adding in our own custom components. This part will outline how to add the code above as a drag-and-drop component so we can easily add it to existing pages on our Shopify account.
 
 ### Edit Code
+Go to Online Store > Current Theme. Click the three dots and select 'Edit Code' from the dropdown.
+![Screenshot of Shopify clicking the theme's 'Edit Code' function]['./03.gif']
+
+On the left side, find the 'Section' folder and select 'Add a new section'. A popup menu will appear. Name it **email-popup** and make sure the file type is set to **liquid**.
+
+**Enter code for email-popup.liquid**
+
+On the left side, find the 'Assets' folder and select 'Add a new asset'. Another popup menu will appear. Name it **popup** and make sure the file type is set to **css**.
+
+**Enter code for popup.css**
+
+### Adding the Email Popup Section
+Woo! We got past the code part, now onto adding the email popup to the website.
+
+Go back to the Online Store > Current Theme menu and select 'Customize'.
+
+Now you should be in the website builder. Select 'Add section' within the 'Header' group, and our 'Email Popup' section should appear. Select it.
+
+You can customize the message on the popup, as well as the text on the button.
+
+Save the website and now when you preview it, the popup should appear!
+![Gif showing the popup functionality on the Shopify website.][./final.gif]
