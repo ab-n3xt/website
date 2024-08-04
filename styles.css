@@ -49,7 +49,6 @@ header a {
 
 body {
     background-color: #191919;
-    background-image: url("/assets/website-bg.svg");
     color: white;
     display: grid;
     grid-template-rows: 100px 1fr 100px;
@@ -115,7 +114,6 @@ main {
 main>article {
     display: flex;
     grid-gap: 24px;
-    max-width: 1080px;
     align-self: center;
 }
 
@@ -239,6 +237,8 @@ article>button {
 .blog-article {
     display: flex;
     flex-direction: column;
+    max-width: 812px;
+    overflow-x: auto;
 }
 
 .blog-article>section pre {
@@ -270,6 +270,12 @@ article>button {
 .blog-article>section>p, .blog-article>section>ul>li {
     font-size: 1.2rem;
     line-height: 2rem;
+}
+
+.blog-article img {
+    width: 70%;
+    height: auto;
+    align-self: center;
 }
 
 .contact-info {
@@ -410,9 +416,19 @@ article>button {
 
 @media screen and (max-width: 682px) {
     body {
+        display: flex;
+        flex-direction: column;
         margin: 0px 20px;
         padding: 16px 0px;
         text-align: center;
+    }
+
+    .blog-article {
+        text-align: left;
+    }
+
+    .blog-article img {
+        width: 100%;
     }
 
     .index {
@@ -427,6 +443,9 @@ article>button {
     header>nav {
         margin-left: 0px;
         margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     main>article {
