@@ -55,7 +55,6 @@ body {
     grid-template-areas: "header" "main" "footer";
     height: 100vh;
     margin: 0px 40px;
-    font-size: 16px;
     color: #E6E8E6;
     font-family: 'Urbanist', sans-serif;
     letter-spacing: 1px;
@@ -278,6 +277,10 @@ article>button {
     align-self: center;
 }
 
+.blog-article ul li {
+    font-size: 1rem;
+}
+
 .contact-info {
     text-align: center;
 }
@@ -415,6 +418,10 @@ article>button {
 }
 
 @media screen and (max-width: 682px) {
+    html {
+        font-size: 14px;
+    }
+
     body {
         display: flex;
         flex-direction: column;
