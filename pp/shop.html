@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP - Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        #items-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 32px;
+
+            @media screen and (max-width: 1000px) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media screen and (max-width: 700px) {
+                grid-template-columns: 1fr;
+                width: 100%;
+            }
+
+            & .item {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                position: relative;
+
+                & span.sold-out {
+                    background-color: var(--black);
+                    color: white;
+                    display: inline;
+                    position: absolute;
+                    right: 0;
+                    padding: 8px;
+                }
+
+                & span.on-sale {
+                    background-color: palegoldenrod;
+                    display: inline;
+                    position: absolute;
+                    right: 0;
+                    padding: 8px;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="#" alt="logo"></a>
+        <div id="top-nav">
+            <nav>
+                <a href="about.html">ABOUT</a>
+                <a class="active" href="shop.html">SHOP</a>
+                <a href="sizing.html">SIZING</a>
+                <a href="custom.html">CUSTOM OPTIONS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <nav>
+                <a href="#">Search</a>
+                <a href="login.html">Login</a>
+                <a href="#">Cart</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="items-container">
+            <a href="item.html">
+                <div class="item">
+                    <img src="jewellery-2.png" alt="">
+                    <h1>Necklace</h1>
+                    <p>$1000</p>
+                </div>
+            </a>
+            <a href="item.html">
+                <div class="item">
+                    <img src="jewellery-2.png" alt="">
+                    <h1>Necklace</h1>
+                    <p>$1000</p>
+                    <span class="sold-out">Sold Out</span>
+                </div>
+            </a>
+            <a href="item.html">
+                <div class="item">
+                    <img src="jewellery-2.png" alt="">
+                    <h1>Necklace</h1>
+                    <p>$1000</p>
+                    <span class="on-sale">On-Sale</span>
+                </div>
+            </a>
+            <a href="item.html">
+                <div class="item">
+                    <img src="jewellery-2.png" alt="">
+                    <h1>Necklace</h1>
+                    <p>$1000</p>
+                </div>
+            </a>
+            <a href="item.html">
+                <div class="item">
+                    <img src="jewellery-2.png" alt="">
+                    <h1>Necklace</h1>
+                    <p>$1000</p>
+                </div>
+            </a>
+            <a href="item.html">
+                <div class="item">
+                    <img src="jewellery-2.png" alt="">
+                    <h1>Necklace</h1>
+                    <p>$1000</p>
+                </div>
+            </a>
+            <a href="item.html">
+                <div class="item">
+                    <img src="jewellery-2.png" alt="">
+                    <h1>Necklace</h1>
+                    <p>$1000</p>
+                </div>
+            </a>
+            <a href="item.html">
+                <div class="item">
+                    <img src="jewellery-2.png" alt="">
+                    <h1>Necklace</h1>
+                    <p>$1000</p>
+                </div>
+            </a>
+            <a href="item.html">
+                <div class="item">
+                    <img src="jewellery-2.png" alt="">
+                    <h1>Necklace</h1>
+                    <p>$1000</p>
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a class="active" href="shop.html">SHOP</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <p>PP Copyright @ 2025</p>
+            <nav>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">Kakao</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

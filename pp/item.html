@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP - Item</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        #item-viewer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #item-header {
+            & h1 {
+                font-size: 40px;
+                font-weight: 900;
+            }
+        }
+
+        #item-details {
+            display: flex;
+            flex-direction: column;
+            padding: 32px;
+            gap: 64px;
+        }
+
+        #item-form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            & form {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                & > label {
+                    font-weight: 300;
+                }
+            }
+
+            & #item-type-list {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        input[type="radio"] + label {
+            display: inline-block;
+            padding: 8px;
+            text-decoration: underline transparent;
+            text-underline-offset: 0.6rem;
+            transition: all 0.5s;
+        }
+
+        input[type="radio"]:disabled + label {
+            color: gray;
+            cursor: default;
+
+            &::after {
+                content: "Sold Out";
+                font-weight: bold;
+                margin-left: 12px;
+            }
+        }
+
+        input[type="radio"]:not(:disabled) + label:hover {
+            cursor: pointer;
+        }
+
+        input[type="radio"]:checked + label {
+            font-weight: bold;
+            text-decoration: underline currentColor;
+        }
+
+        #buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 40px;
+
+            & button {
+                border: none;
+                font-weight: 300;
+                padding: 12px;
+                text-decoration: underline solid transparent;
+                text-underline-offset: 0.3rem;
+                transition: all 0.5s;
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline solid currentColor;
+                }
+            }
+
+            & #buy-button {
+                background-color: var(--black);
+                color: white;
+            }
+
+            & #add-to-cart-button {
+                background-color: white;
+                border: 1px solid black;
+            }
+        }
+
+        #more-payments-link {
+            text-decoration: underline;
+            text-underline-offset: 0.5rem;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+
+        #item-description {
+            color: hsl(0, 0%, 25%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="#" alt="logo"></a>
+        <div id="top-nav">
+            <nav>
+                <a href="about.html">ABOUT</a>
+                <a href="shop.html">SHOP</a>
+                <a href="sizing.html">SIZING</a>
+                <a href="custom.html">CUSTOM OPTIONS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <nav>
+                <a href="#">Search</a>
+                <a href="login.html">Login</a>
+                <a href="#">Cart</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="item-viewer">
+            <div id="item-gallery">
+                <img src="jewellery-1.png" alt="Necklace">
+            </div>
+            <div id="item-details">
+                <div id="item-header">
+                    <h1>Necklace</h1>
+                    <h2>$1000.00</h2>
+                    <p>Free Shipping</p>
+                </div>
+                <div id="item-form">
+                    <form>
+                        <label for="type">Chain Type</label>
+                        <div id="item-type-list">
+                            <div>
+                                <input type="radio" name="type" id="type-1" hidden selected>
+                                <label for="type-1">15in 6m Cuban Choker + 2in Extension</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="type" id="type-2" hidden>
+                                <label for="type-2">18in 6m Cuban Choker + 1.5in Extension</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="type" id="type-3" hidden disabled>
+                                <label for="type-3">21in 6m Cuban Choker + 3.5in Extension</label>
+                            </div>
+                        </div>
+                        <div id="buttons">
+                            <button onclick="return false;" id="buy-button">BUY NOW</button>
+                            <button onclick="return false;" id="add-to-cart-button">ADD TO CART</button>
+                        </div>
+                        <div>
+                            <a id="more-payments-link" href="#">More Payment Options</a>
+                        </div>
+                    </form>
+                </div>
+                <div id="item-description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui illo nisi eveniet, nostrum sequi quos repellendus maxime fugiat eius veritatis est exercitationem vero repudiandae, laudantium eaque sint nulla ex animi.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, beatae? Nesciunt, perferendis sit odio reprehenderit quasi quis numquam distinctio vitae. Delectus modi vitae accusantium distinctio quasi reiciendis consequuntur, doloremque esse!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="shop.html">SHOP</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <p>PP Copyright @ 2025</p>
+            <nav>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">Kakao</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

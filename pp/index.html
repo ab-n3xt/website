@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        #card-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            & .card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                transition: all 0.5s;
+    
+                & .caption {
+                    background-color: hsla(0, 0%, 0%, 0.9);
+                    color: white;
+                    text-align: center;
+                    padding: 16px;
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+    
+                    & h1 {
+                        font-size: 48px;
+                        font-weight: 600;
+                    }
+
+                    & p {
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+
+        #header-return {
+            background-color: lightgray;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-return">
+        <a href="../index.html">Back to Aidan's Website</a>
+    </div>
+    <header>
+        <a href="index.html"><img src="#" alt="logo"></a>
+        <div id="top-nav">
+            <nav>
+                <a href="about.html">ABOUT</a>
+                <a href="shop.html">SHOP</a>
+                <a href="sizing.html">SIZING</a>
+                <a href="custom.html">CUSTOM OPTIONS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <nav>
+                <a href="#">Search</a>
+                <a href="login.html">Login</a>
+                <a href="#">Cart</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="card-nav">
+            <a href="shop.html">
+                <div class="card">
+                    <img src="jewellery-1.png" alt="">
+                    <div class="caption">
+                        <h1>PP</h1>
+                        <p>Shop Now</p>
+                    </div>
+                </div>
+            </a>
+            <a href="custom.html">
+                <div class="card">
+                    <img src="jewellery-1.png" alt="">
+                    <div class="caption">
+                        <h1>Custom</h1>
+                    </div>
+                </div>
+            </a>
+            <a href="about.html">
+                <div class="card">
+                    <img src="jewellery-1.png" alt="">
+                    <div class="caption">
+                        <h1>About</h1>
+                        <p>Free Worldwide Shipping</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <nav>
+                <a class="active" href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="shop.html">SHOP</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <p>PP Copyright @ 2025</p>
+            <nav>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">Kakao</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP - About</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .text-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            & h1 {
+                font-size: 64px;
+                font-family: 'Inter', sans-serif;
+            }
+
+            &:not(:last-child) {
+                border-bottom: 1px solid lightgray;
+                padding-bottom: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="#" alt="logo"></a>
+        <div id="top-nav">
+            <nav>
+                <a class="active" href="about.html">ABOUT</a>
+                <a href="shop.html">SHOP</a>
+                <a href="sizing.html">SIZING</a>
+                <a href="custom.html">CUSTOM OPTIONS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <nav>
+                <a href="#">Search</a>
+                <a href="login.html">Login</a>
+                <a href="#">Cart</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article>
+            <div class="text-container">
+                <h1>About</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel praesentium facilis alias, id repellendus laudantium quibusdam, enim commodi sunt natus iusto quaerat veritatis dolorum tempore repudiandae eum. Quibusdam, eligendi autem?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nam dignissimos autem enim? Natus, eos suscipit voluptatum quasi possimus quod obcaecati vero molestiae quam dolorem qui alias similique unde cum.</p>
+            </div>
+            <div class="text-container">
+                <h1>Shipping</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel praesentium facilis alias, id repellendus laudantium quibusdam, enim commodi sunt natus iusto quaerat veritatis dolorum tempore repudiandae eum. Quibusdam, eligendi autem?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nam dignissimos autem enim? Natus, eos suscipit voluptatum quasi possimus quod obcaecati vero molestiae quam dolorem qui alias similique unde cum.</p>
+            </div>
+            <div class="text-container">
+                <h1>Return / Exchange / Refund</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel praesentium facilis alias, id repellendus laudantium quibusdam, enim commodi sunt natus iusto quaerat veritatis dolorum tempore repudiandae eum. Quibusdam, eligendi autem?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nam dignissimos autem enim? Natus, eos suscipit voluptatum quasi possimus quod obcaecati vero molestiae quam dolorem qui alias similique unde cum.</p>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div>
+            <nav>
+                <a href="index.html">HOME</a>
+                <a class="active" href="about.html">ABOUT</a>
+                <a href="shop.html">SHOP</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <p>PP Copyright @ 2025</p>
+            <nav>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">Kakao</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
