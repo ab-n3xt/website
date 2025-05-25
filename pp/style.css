@@ -80,16 +80,58 @@ body {
 header {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     padding: 64px 36px;
+    gap: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid lightgray;
 
+    @media screen and (max-width: 600px) {
+        gap: 32px;
+    }
+
+    #logo-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:has(#toggle:checked) + #top-nav {
+            height: 100%;
+
+            & > nav {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        & #mobile {
+            display: none;
+    
+            @media screen and (max-width: 600px) {
+                display: inline-block;
+            }
+        }
+    }
+    
     & #top-nav {
         display: flex;
         justify-content: space-between;
 
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            gap: 16px;
+            height: 0;
+        }
+
         & nav {
             display: flex;
             gap: 16px;
+            transition: all 0.3s;
+
+            @media screen and (max-width: 600px) {
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+            }
         }
 
         & a {
@@ -132,11 +174,18 @@ footer {
     color: gray;
     margin-top: auto;
     padding: 64px 36px;
+    padding-top: 16px;
+    border-top: 1px solid lightgray;
 
     & > div {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            gap: 16px;
+        }
     }
 
     & nav {
