@@ -237,7 +237,6 @@ article>button {
     display: flex;
     flex-direction: column;
     max-width: 812px;
-    overflow-x: auto;
 }
 
 .blog-article>section pre {
