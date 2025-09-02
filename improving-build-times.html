@@ -24,7 +24,7 @@
         }
     </style>
 
-    <title>A.B. - Popups on Shopify</title>
+    <title>A.B. - Improving Build Times in Monogame</title>
 
 </head>
 
@@ -39,7 +39,6 @@
             <a href="index.html#contact">Contact</a>
         </nav>
     </header>
-
     <main>
         <article class="blog-article">
             <section>
@@ -53,11 +52,9 @@
                 I found that the <em>Content Pipeline</em> was the culprit. All the Content Pipeline did during the
                 build phase was convert asssets into <code>.xnb</code> files and then copy them into the build
                 directory.</p>
-            <p>After buidling the assets manually with the MGCB GUI, it took less than a second to create
-                <code>.xnb</code> files. Knowing that copying kb-sized .xnb files also takes less than a second, it
-                doesn’t make sense why the build time is taking ~10 seconds to complete.</p>
-            <p>Therefore I decided to build the assets and copy the files manually on project build. This is achieved by
-                doing the following:</p>
+            <p>To start, I manually built the <code>.xnb</code> files using the MGCB GUI which took less than a second. Then, I copied the kb-sized <code>.xnb</code> files into the main build folder.</p>
+            <p>Now knowing this is all its doing during its build, it doesn’t make sense why the build time is taking ~10 seconds to complete.</p>
+            <p>Therefore I decided to build the assets before building and then copy the files manually on project build. Here's what I did:</p>
             <ol>
                 <li>Remove the line
                     <code>&lt;PackageReference ... Include="MonoGame.Content.Builder.Task" ... /&gt;</code> from the
@@ -89,11 +86,8 @@
             </ol>
             <p>This will generate <code>.xnb</code> for every asset in your <code>Content</code> directory.</p>
             <p>Be sure to run this any time new assets are added or edited to your project from now on.</p>
-            <p>–</p>
-            <p>Now when I run my project on VS Code, my project loads way faster (~10 seconds =&gt; ~1 second). Hooray!
-                🎉</p>
-
-
+            <hr>
+            <p>Now when I run my project on VS Code, my project loads way faster (~10 seconds =&gt; ~1 second). Hooray!🎉</p>
         </article>
     </main>
     <footer>
