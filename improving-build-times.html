@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="prism.css">
+
+    <!-- Load Google Font 'Urbanist' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>A.B. - Popups on Shopify</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>A.B. Consulting</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a class="active" href="index.html#blogs">Blogs</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="blog-article">
+            <h1 id="improving-build-times-with-monogame-by-removing-monogame.content.builder.task">Improving Build Times
+                with Monogame By Removing MonoGame.Content.Builder.Task</h1>
+            <p>I’m starting to learn Monogame and one of the initial aspects which I found incredibly frustrating was
+                its build times (~10 seconds even with no changes to the code).</p>
+            <p>After doing a bit for<a href="https://old.reddit.com/r/monogame/comments/p9tsn3/slow_build_time/">research</a>,
+                I found that the <em>Content Pipeline</em> was the culprit. All the Content Pipeline did during the
+                build phase was convert asssets into <code>.xnb</code> files and then copy them into the build
+                directory.</p>
+            <p>After buidling the assets manually with the MGCB GUI, it took less than a second to create
+                <code>.xnb</code> files. Knowing that copying kb-sized .xnb files also takes less than a second, it
+                doesn’t make sense why the build time is taking ~10 seconds to complete.</p>
+            <p>Therefore I decided to build the assets and copy the files manually on project build. This is achieved by
+                doing the following:</p>
+            <ol>
+                <li>Remove the line
+                    <code>&lt;PackageReference ... Include="MonoGame.Content.Builder.Task" ... /&gt;</code> from the
+                    <code>.csproj</code> file</li>
+            </ol>
+            <p>This will remove the project’s build step to build the <code>.xnb</code> files and copy them into the
+                build directory (culprit of slow down during build step).</p>
+            <ol start="2">
+                <li>Adding this line to the end of my <code>.csproj</code> file:</li>
+            </ol>
+            <pre class=" language-xml"><code class="prism  language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ItemGroup</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Content</span> <span class="token attr-name">Include</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Content\**\*.xnb<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CopyToOutputDirectory</span><span class="token punctuation">&gt;</span></span>PreserveNewest<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>CopyToOutputDirectory</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Content</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ItemGroup</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+            <p>This will copy all of the <code>.xnb</code> files in the Content directory of the project to the Content
+                directory of the final build, along with their directories which allows us to not change any of our
+                preexisting <code>Content.Load</code> code.</p>
+            <ol start="3">
+                <li>Editing the ‘OutputDir’ property of my ‘Content’ folder in the MGCB Editor to ‘.’</li>
+            </ol>
+            <p>Before this change, building any assets will put them into a separate directory, making copying to the
+                final build directory a bit cumbersome.</p>
+            <p>Now the <code>.xnb</code> files will be beside their respective asset which makes it easier to copy over
+                to the build directory since it mimicks the same file structure.</p>
+            <ol start="4">
+                <li>Run ‘Build’ in the MGCB Editor</li>
+            </ol>
+            <p>This will generate <code>.xnb</code> for every asset in your <code>Content</code> directory.</p>
+            <p>Be sure to run this any time new assets are added or edited to your project from now on.</p>
+            <p>–</p>
+            <p>Now when I run my project on VS Code, my project loads way faster (~10 seconds =&gt; ~1 second). Hooray!
+                🎉</p>
+
+
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a target="_blank" href="https://www.linkedin.com/in/aidan-buchanan/">LinkedIn</a>
+            <a target="_blank" href="https://github.com/ab-n3xt">GitHub</a>
+        </nav>
+        <p id="github-link">Hosted on <a href="https://pages.github.com/"> Github Pages</a></p>
+    </footer>
+    <script src="prism.js"></script>
+</body>
